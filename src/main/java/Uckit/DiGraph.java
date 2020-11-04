@@ -1,3 +1,4 @@
+package Uckit;
 /* Generic Directed Weighted Graph with Dijkstra's Shortest Path Algorithm
 * by /u/Philboyd_Studge
 * for /r/javaexamples
