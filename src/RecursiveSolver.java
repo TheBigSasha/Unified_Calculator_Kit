@@ -2,6 +2,8 @@ import javax.lang.model.element.VariableElement;
 import javax.xml.crypto.dsig.SignatureMethod;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class RecursiveSolver {
     static HashMap<String, Value> knowns = new HashMap<>();
@@ -25,14 +27,24 @@ public class RecursiveSolver {
         Value curMass = new Value(mass, 10);
         Value curWidth = new Value(width, 5);
         Value curLength = new Value(length, 7);
+        Variable gasconstnat = new Variable("R");
+        Value gasconst = new Value(gasconstnat, 8.31446261815324);
+        Variable mols = new Variable("Moles");
+        Value moles = new Value(mols,15);
+        Variable temperature = new Variable("Temperature");
+        SimpleRelation FT = new SimpleRelation(force, Operator.TIMES, temperature, new Variable("Force*Temperature"));
         SimpleRelation AreaOfSquare = new SimpleRelation(length,Operator.TIMES,width,area);
         SimpleRelation FMA = new SimpleRelation(acceleration,Operator.TIMES,mass,force);
         SimpleRelation PFA = new SimpleRelation(force, Operator.OVER, area, pressure);
         SimpleRelation AVT = new SimpleRelation(deltaVelocity,Operator.OVER,time,acceleration);
-        SimpleRelation PVNRT = new SimpleRelation(pressure,Operator.TIMES,volume,NRT);
+        List<Operator> operators = new ArrayList<>(Arrays.asList(Operator.TIMES, Operator.OVER, Operator.OVER));
+        List<Variable> vars = new ArrayList<>(Arrays.asList(pressure,volume,gasconstnat,mols));
+        SimpleMultiRelation PVNRT = new SimpleMultiRelation(vars,operators,temperature);
         System.out.println(knowns.values());
         progress();
         System.out.println(knowns.values());
+        System.out.println("\n");
+        System.out.println(knowns.get("Force*Temperature"));
     }
 
     public static void progress(){
@@ -103,6 +115,50 @@ public class RecursiveSolver {
         TIMES, OVER
     }
 
+    static class SimpleMultiRelation extends Equation<Double>{
+        private final List<Operator> ops;
+        public SimpleMultiRelation(List<Variable> parts, List<Operator> ops, Variable output) {
+            super(new HashSet<Variable>(parts), output);
+            this.ops = ops;
+        }
+
+        @Override
+        public Value<Double> evaluate() {
+            ConcurrentLinkedDeque<Operator> operators = new ConcurrentLinkedDeque<>(ops);
+            ConcurrentLinkedDeque<Value<Double>> values = new ConcurrentLinkedDeque<>();
+            StringBuilder work = new StringBuilder();
+            for(Variable v : required) {
+                values.add(knowns.get(v.getName()));
+            }
+            Double result = 1d;
+            int counter = 0;
+            while(!values.isEmpty()) {
+                Value<Double> val = values.pollFirst();
+                work.append(val);
+                if (counter <= operators.size() + 1) {
+                    try {
+                        Operator o = operators.pollFirst();
+                        work.append(o);
+                        switch (Objects.requireNonNull(o)) {
+                            default -> {
+                            }
+                            case TIMES -> {
+                                result *= (Double) val.getValue();
+                            }
+                            case OVER -> {
+                                result /= (Double) val.getValue();
+                            }
+                        }
+                    } catch (ClassCastException | NullPointerException x) {
+
+                    }
+                    counter++;
+                }
+            }
+            return new Value<>(getVariable(), result, work.toString());
+            }
+    }
+
     static class SimpleRelation extends Equation<Double>{
         private final Operator op;
         public SimpleRelation(Variable a, Operator op, Variable b, Variable output) {
@@ -113,25 +169,33 @@ public class RecursiveSolver {
         @Override
         public Value<Double> evaluate() {
                 Double result = 1d;
+                StringBuilder work = new StringBuilder();
                 for(Variable v : required){
                     try {
                         switch (op) {
-                            case TIMES -> result *= (Double) knowns.get(v.getName()).getValue();
-                            case OVER -> result /= (Double) knowns.get(v.getName()).getValue();
+                            case TIMES -> {
+                                result *= (Double) knowns.get(v.getName()).getValue();
+                                work.append(knowns.get(v.getName()));
+                            }
+                            case OVER -> {
+                                result /= (Double) knowns.get(v.getName()).getValue();
+                                work.append(knowns.get(v.getName()));
+                            }
                             default -> result = 0.;
                         }
                     }catch(ClassCastException ex){
 
                     }
                 }
-                return new Value<>(getVariable(),result);
+                return new Value<>(getVariable(),result, work.toString());
             }
         }
 
     static class Value<E> implements Evaluable<E> {
+        String work = "";
         @Override
         public String toString() {
-            return var.getName() + " " + value.toString();
+            return "[" + var.getName() + " " + value.toString() + " : " + work + "]";
         }
 
         public Variable getVariable() {
@@ -158,6 +222,14 @@ public class RecursiveSolver {
         public Value(Variable var, E value) {
             this.var = var;
             this.value = value;
+            work = "Given";
+            knowns.put(var.getName(),this);
+        }
+
+        public Value(Variable var, E value, String work) {
+            this.var = var;
+            this.value = value;
+            this.work = work;
             knowns.put(var.getName(),this);
         }
 
