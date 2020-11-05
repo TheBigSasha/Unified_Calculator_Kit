@@ -4,6 +4,7 @@ import javax.xml.crypto.dsig.SignatureMethod;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import javax.measure.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class RecursiveSolver {
@@ -270,6 +271,11 @@ public class RecursiveSolver {
         private String name;
         private Set<Equation> includedIn;
         private Set<Equation> returnedBy;
+        private Unit unit;      //TODO: Unit tracking
+        //TODO: Cas based solving?
+
+
+
 
         @Override
         public String toString() {
