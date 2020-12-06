@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Josefin+Sans:wght@200;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*@author Sasha*/
+
+.top-bar{
+    -fx-spacing: 40;
+    -fx-padding: 24;
+}
+
+.sunset{
+    -fx-background-color: linear-gradient(to bottom left, #ff7f50, #6a5acd);
+}
+
+.space{
+    -fx-background-color: linear-gradient(to bottom left, #004579, #6a5acd);
+}
+
+.forest{
+    -fx-background-color: linear-gradient(to bottom left, #067a00, #06c199);
+}
+
+
+.title_top{
+    -fx-font-size: 63;
+    -fx-font-family: "Bebas Neue";
+}
+
+.cursive-text{
+    -fx-font-size: 22;
+    -fx-font-family: "Dancing Script";
+}
+
+.subhead{
+    -fx-font-size: 22;
+    -fx-font-family: "Josefin Sans";
+}
+.header {
+    -fx-font-size: 32;
+    -fx-font-family: "Josefin Sans";
+}
+
+.body {
+    -fx-font-size: 13;
+    -fx-font-family: "Josefin Sans";
+}
+
+.force-white{
+    -fx-text-fill: white;
+}
+
+.circlebutton {
+    -fx-background-radius: 9999;
+}
+
+.scary{
+    -fx-background-color: #ff5e5e;
+}
+
+.drop-shadow {
+    -fx-effect: dropshadow(two-pass-box , darkslateblue , 5 , 5 , 0 , 0)
+}
+
+.plus_button {
+    -fx-font-size: 44;
+    -fx-font-family: "Roboto";
+}
+
+.business-hour {
+    -fx-background-color: rgba(15,15,15,0.7);
+    -fx-stroke-width: 1;
+    -fx-stroke: gray;
+    -fx-fill: rgba(15,15,15,0.7);
+
+}

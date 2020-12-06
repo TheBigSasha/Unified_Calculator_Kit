@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.ComboBox?>
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Uckit.view.Settings">
+   <center>
+      <JFXListView prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+          <FlowPane>
+              <Label text="App Theme"/> <ComboBox fx:id="ThemeChooser"/>
+          </FlowPane>
+
+          <RadioButton text="Show Help" fx:id="ShowHelpToggle" selected="true"/>
+          <FlowPane>
+              <Label text="Header Design"/> <ComboBox fx:id="GradientChooser"/>
+          </FlowPane>
+
+      </JFXListView>
+   </center>
+</BorderPane>
