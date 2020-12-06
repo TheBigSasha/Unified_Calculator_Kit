@@ -1,47 +1,683 @@
 [
   {
-    "Name": "ACCELERATION",
-    "Symbol": {
-      "fAttributes": 0,
-      "fSymbolName": "ACCELERATION"
+    "EquationString": "FORCE\u003d\u003dPRESSURE/AREA",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 1.0,
+      "Name": "FORCE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "FORCE"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": false,
+          "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+          "varName": "PRESSURE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+          "varName": "FORCE"
+        },
+        {
+          "given": true,
+          "varName": "MASS"
+        },
+        {
+          "given": true,
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": true,
+          "varName": "AREA"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+          "varName": "FORCE"
+        }
+      ]
     },
-    "Description": "",
-    "Steps": []
+    "MemberVariables": [
+      {
+        "Value": 0.8,
+        "Name": "PRESSURE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "PRESSURE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      },
+      {
+        "Value": 0.8,
+        "Name": "AREA",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "AREA"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+            "varName": "FORCE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [AREA\u003d\u003dPRESSURE/FORCE]",
+            "varName": "AREA"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      }
+    ]
   },
   {
-    "Name": "PRESSURE",
-    "Symbol": {
-      "fAttributes": 0,
-      "fSymbolName": "PRESSURE"
+    "EquationString": "AREA\u003d\u003dPRESSURE/FORCE",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 0.8,
+      "Name": "AREA",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "AREA"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": false,
+          "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+          "varName": "PRESSURE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+          "varName": "FORCE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [AREA\u003d\u003dPRESSURE/FORCE]",
+          "varName": "AREA"
+        },
+        {
+          "given": true,
+          "varName": "MASS"
+        },
+        {
+          "given": true,
+          "varName": "AREA"
+        },
+        {
+          "given": true,
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+          "varName": "FORCE"
+        }
+      ]
     },
-    "Description": "",
-    "Steps": []
+    "MemberVariables": [
+      {
+        "Value": 1.0,
+        "Name": "FORCE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FORCE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+            "varName": "FORCE"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      },
+      {
+        "Value": 0.8,
+        "Name": "PRESSURE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "PRESSURE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      }
+    ]
   },
   {
-    "Name": "AREA",
-    "Symbol": {
-      "fAttributes": 0,
-      "fSymbolName": "AREA"
+    "EquationString": "ACCELERATION\u003d\u003dFORCE/MASS",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 0.1,
+      "Name": "ACCELERATION",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "ACCELERATION"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "MASS"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [ACCELERATION\u003d\u003dFORCE/MASS]",
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": true,
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+          "varName": "FORCE"
+        }
+      ]
     },
-    "Description": "",
-    "Steps": []
+    "MemberVariables": [
+      {
+        "Value": 10.0,
+        "Name": "MASS",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "MASS"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [ACCELERATION\u003d\u003dFORCE/MASS]",
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [MASS\u003d\u003dFORCE/ACCELERATION]",
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      },
+      {
+        "Value": 1.0,
+        "Name": "FORCE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FORCE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+            "varName": "FORCE"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      }
+    ]
   },
   {
-    "Name": "FORCE",
-    "Symbol": {
-      "fAttributes": 0,
-      "fSymbolName": "FORCE"
+    "EquationString": "PRESSURE \u003d\u003d FORCE * AREA",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 0.8,
+      "Name": "PRESSURE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "PRESSURE"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": false,
+          "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+          "varName": "PRESSURE"
+        },
+        {
+          "given": true,
+          "varName": "MASS"
+        },
+        {
+          "given": true,
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": true,
+          "varName": "AREA"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+          "varName": "FORCE"
+        }
+      ]
     },
-    "Description": "",
-    "Steps": []
+    "MemberVariables": [
+      {
+        "Value": 1.0,
+        "Name": "FORCE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FORCE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+            "varName": "FORCE"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      },
+      {
+        "Value": 0.8,
+        "Name": "AREA",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "AREA"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+            "varName": "FORCE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [AREA\u003d\u003dPRESSURE/FORCE]",
+            "varName": "AREA"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      }
+    ]
   },
   {
-    "Name": "MASS",
-    "Symbol": {
-      "fAttributes": 0,
-      "fSymbolName": "MASS"
+    "EquationString": "MASS\u003d\u003dFORCE/ACCELERATION",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 10.0,
+      "Name": "MASS",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "MASS"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "MASS"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [ACCELERATION\u003d\u003dFORCE/MASS]",
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [MASS\u003d\u003dFORCE/ACCELERATION]",
+          "varName": "MASS"
+        },
+        {
+          "given": true,
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+          "varName": "FORCE"
+        }
+      ]
     },
-    "Description": "",
-    "Steps": []
+    "MemberVariables": [
+      {
+        "Value": 1.0,
+        "Name": "FORCE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FORCE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": false,
+            "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+            "varName": "PRESSURE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+            "varName": "FORCE"
+          },
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "AREA"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      },
+      {
+        "Value": 0.1,
+        "Name": "ACCELERATION",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "ACCELERATION"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [ACCELERATION\u003d\u003dFORCE/MASS]",
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "EquationString": "FORCE\u003d\u003dMASS*ACCELERATION",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 1.0,
+      "Name": "FORCE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "FORCE"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": false,
+          "fromName": "Equation [PRESSURE \u003d\u003d FORCE * AREA]",
+          "varName": "PRESSURE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dPRESSURE/AREA]",
+          "varName": "FORCE"
+        },
+        {
+          "given": true,
+          "varName": "MASS"
+        },
+        {
+          "given": true,
+          "varName": "ACCELERATION"
+        },
+        {
+          "given": true,
+          "varName": "AREA"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+          "varName": "FORCE"
+        }
+      ]
+    },
+    "MemberVariables": [
+      {
+        "Value": 10.0,
+        "Name": "MASS",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "MASS"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [ACCELERATION\u003d\u003dFORCE/MASS]",
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [MASS\u003d\u003dFORCE/ACCELERATION]",
+            "varName": "MASS"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      },
+      {
+        "Value": 0.1,
+        "Name": "ACCELERATION",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "ACCELERATION"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "MASS"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [ACCELERATION\u003d\u003dFORCE/MASS]",
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": true,
+            "varName": "ACCELERATION"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [FORCE\u003d\u003dMASS*ACCELERATION]",
+            "varName": "FORCE"
+          }
+        ]
+      }
+    ]
   }
 ]

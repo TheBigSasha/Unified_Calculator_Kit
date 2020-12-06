@@ -39,6 +39,14 @@ public class Variable implements VariableComputedObserver {
         evaluator.eval(symbol);
     }
 
+    public Variable(Variable var, boolean noValue) {
+        name = var.name;
+        symbol = new Symbol(var.symbol.getSymbolName(), uckit);
+        description = var.description;
+        variableFromName.put(name,this);
+        evaluator.eval(symbol);
+    }
+
     public static Collection<Variable> getAllVariables(){
         return variableFromName.values();
     }
