@@ -61,7 +61,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'Uckit.view.UCKIT'
+    mainClassName = 'Uckit.application.UCKIT'
 }
 
 test {

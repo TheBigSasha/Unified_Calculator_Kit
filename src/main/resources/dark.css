@@ -1,0 +1,254 @@
+/*@author Sasha*/
+.root {
+    -fx-base: rgb(50, 50, 50);
+    -fx-background: rgb(50, 50, 50);
+
+    -fx-font-family: "Josefin Sans";
+    -fx-font-size: 16;
+    -fx-font-smoothing-type: LCD;
+    /* make controls (buttons, thumb, etc.) slightly lighter */
+    -fx-color: derive(-fx-base, 10%);
+
+    /* text fields and table rows background */
+    -fx-control-inner-background: rgb(20, 20, 20);
+    /* version of -fx-control-inner-background for alternative rows */
+    -fx-control-inner-background-alt: derive(-fx-control-inner-background, 2.5%);
+
+    /* text colors depending on background's brightness */
+    -fx-light-text-color: rgb(220, 220, 220);
+    -fx-mid-text-color: rgb(100, 100, 100);
+    -fx-dark-text-color: rgb(20, 20, 20);
+
+    /* A bright blue for highlighting/accenting objects.  For example: selected
+     * text; selected items in menus, lists, trees, and tables; progress bars */
+    -fx-accent: rgb(0, 80, 100);
+
+    /* color of non-focused yet selected elements */
+    -fx-selection-bar-non-focused: rgb(50, 50, 50);
+}
+
+/* Fix derived prompt color for text fields */
+.text-input {
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, +50%);
+}
+
+/* Keep prompt invisible when focused (above color fix overrides it) */
+.text-input:focused {
+    -fx-prompt-text-fill: transparent;
+}
+
+/* Fix scroll bar buttons arrows colors */
+.scroll-bar > .increment-button > .increment-arrow,
+.scroll-bar > .decrement-button > .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, rgb(220, 220, 220);
+}
+
+.scroll-bar > .increment-button:hover > .increment-arrow,
+.scroll-bar > .decrement-button:hover > .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, rgb(240, 240, 240);
+}
+
+.scroll-bar > .increment-button:pressed > .increment-arrow,
+.scroll-bar > .decrement-button:pressed > .decrement-arrow {
+    -fx-background-color: -fx-mark-highlight-color, rgb(255, 255, 255);
+}
+
+.button{
+    -fx-stroke: null;
+}
+
+.Agenda {
+    -fx-font-family: "Josefin Sans";
+    -fx-text-fill: white;
+}
+
+.Agenda .DayLabel {
+    -fx-fill: white;
+}
+
+.Agenda .Week {
+    -fx-background-color: rgb(50, 50, 50);
+}
+
+.Agenda .HourLabel {
+    -fx-fill: WHITE;
+    -fx-stroke: transparent;
+}
+
+.Agenda .HourLine {
+    -fx-fill: transparent;
+    -fx-stroke: BLACK;
+}
+.Agenda .DayLine {
+    -fx-fill: transparent;
+    -fx-stroke: BLACK;
+}
+
+.Agenda .HalfHourLine {
+    -fx-fill: transparent;
+    -fx-stroke: #1c1c1c;
+    -fx-stroke-dash-array: 4 4 4 4;
+}
+
+.Agenda .DayHeader {
+    -fx-border-color: #1a1a1a;
+    -fx-border-width: 0px 0px 0px 1px;
+    -fx-text-fill: WHITE;
+}
+
+
+.Agenda .DayHeader .weekend {
+	-fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+
+.Agenda .Day {
+    -fx-fill: transparent;
+    -fx-stroke: transparent;
+    -fx-border-color:BLACK;
+    -fx-border-width: 0px 0px 0px 1px;
+}
+
+.Agenda .weekend {
+    -fx-background-color: rgba(10, 10, 10, 0.56);
+}
+
+.Agenda .today {
+}
+
+.Agenda .Appointment {
+    -fx-border-color: BLACK;
+    -fx-border-width: 1px;
+}
+
+.Agenda .AppointmentTimeLabel {
+    -fx-fill: WHITE;
+    -fx-stroke: transparent;
+    -fx-font-size: 0.8em;
+}
+
+.Agenda .AppointmentLabel {
+    -fx-fill: WHITE;
+    -fx-stroke: transparent;
+}
+
+.group0 { -fx-background-color: linear-gradient(to bottom left, #ff7f50, #6a5acd); -fx-fill: linear-gradient(to bottom left, #ff7f50, #6a5acd); }
+.group1 { -fx-background-color: #D06B64; -fx-fill: #D06B64; }
+.group2 { -fx-background-color: #F83A22; -fx-fill: #F83A22; }
+.group3 { -fx-background-color: #FA573C; -fx-fill: #FA573C; }
+.group4 { -fx-background-color: #FF7537; -fx-fill: #FF7537; }
+.group5 { -fx-background-color: #FFAD46; -fx-fill: #FFAD46; }
+.group6 { -fx-background-color: #42D692; -fx-fill: #42D692; }
+.group7 { -fx-background-color: #16A765; -fx-fill: #16A765; }
+.group8 { -fx-background-color: #7BD148; -fx-fill: #7BD148; }
+.group9 { -fx-background-color: #B3DC6C; -fx-fill: #B3DC6C; }
+.group10 { -fx-background-color: #FBE983; -fx-fill: #FBE983; }
+.group11 { -fx-background-color: #FAD165; -fx-fill: #FAD165; }
+.group12 { -fx-background-color: #92E1C0; -fx-fill: #92E1C0; }
+.group13 { -fx-background-color: #9FE1E7; -fx-fill: #9FE1E7; }
+.group14 { -fx-background-color: #9FC6E7; -fx-fill: #9FC6E7; }
+.group15 { -fx-background-color: #4986E7; -fx-fill: #4986E7; }
+.group16 { -fx-background-color: #9A9CFF; -fx-fill: #9A9CFF; }
+.group17 { -fx-background-color: #B99AFF; -fx-fill: #B99AFF; }
+.group18 { -fx-background-color: #C2C2C2; -fx-fill: #C2C2C2; }
+.group19 { -fx-background-color: #CABDBF; -fx-fill: #CABDBF; }
+.group20 { -fx-background-color: #CCA6AC; -fx-fill: #CCA6AC; }
+.group21 { -fx-background-color: #F691B2; -fx-fill: #F691B2; }
+.group22 { -fx-background-color: #CD74E6; -fx-fill: #CD74E6; }
+.group23 { -fx-background-color: #A47AE2; -fx-fill: #A47AE2; }
+
+/* same colors as the bar chart
+.group0 { -fx-background-color: #f9d900; }
+.group1 { -fx-background-color: #a9e200; }
+.group2 { -fx-background-color: #22bad9; }
+.group3 { -fx-background-color: #0181e2; }
+.group4 { -fx-background-color: #2f357f; }
+.group5 { -fx-background-color: #860061; }
+.group6 { -fx-background-color: #c62b00; }
+.group7 { -fx-background-color: #ff5700; }
+ */
+
+.Agenda .DurationDragger {
+    -fx-fill: #00000040;
+}
+
+.Agenda .MenuIcon {
+    -fx-fill: #00000040;
+}
+
+.Agenda .GhostRectangle {
+    -fx-fill: transparent;
+    -fx-stroke: #00000080;
+    -fx-stroke-width: 1;
+    -fx-stroke-dash-array: 4 4 4 4;
+}
+
+.Agenda .Selected {
+    -xfx-color: -fx-focused-base;
+    -fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: -1.4, 0, 1, 2;
+    -fx-background-radius: 6.4, 5, 4, 3;
+}
+
+.Agenda .Now {
+    -fx-fill: linear-gradient(to bottom left, #ff7f50, #6a5acd);
+    -fx-stroke: transparent;
+}
+.Agenda .History {
+    -fx-stroke: transparent;
+    -fx-fill: #FFFFFF70;
+}
+
+.AgendaPopup {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0,0,1,2;
+    -fx-background-radius: 5,5,4,3;
+    -fx-padding: 0.766667em 0.733333em 0.75em 0.733333em;
+    -fx-text-fill: WHITE;
+}
+
+.AgendaPopup .AppointmentGroups {
+}
+
+.AgendaPopup .AppointmentGroup {
+    -fx-border-color: BLACK;
+    -fx-border-width: 1px;
+}
+
+.popover  {
+    -fx-background-color: transparent;
+}
+
+.popover > .border {
+    -fx-stroke: linear-gradient(to bottom, rgba(0,0,0, .3), rgba(0, 0, 0, .7)) ;
+    -fx-stroke-width: 1;
+    -fx-fill: rgba(10.0,10.0,10.0,.95);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,.2), 10.0, 0.5, 2.0, 2.0);
+}
+
+.popover > .content {
+}
+
+.popover > .detached {
+}
+
+.popover > .content > .title > .text  {
+    -fx-padding: 6.0 6.0 0.0 6.0;
+    -fx-text-fill: rgba(120, 120, 120, 0.8);
+    -fx-font-weight: bold;
+}
+
+.popover > .content > .title > .icon {
+    -fx-padding: 6.0 0.0 0.0 10.0;
+}
+
+.popover > .content > .title > .icon > .graphics > .circle {
+    -fx-fill: gray ;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,.2), 3, 0.5, 1.0, 1.0);
+}
+
+.popover > .content > .title > .icon > .graphics > .line {
+    -fx-stroke: #000000;
+    -fx-stroke-width: 2;
+}
