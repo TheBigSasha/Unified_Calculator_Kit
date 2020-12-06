@@ -10,6 +10,7 @@ import org.matheclipse.core.expression.Context;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -71,6 +72,7 @@ public class CASRecursiveSolver implements VariableComputedObserver{
     }
 
     public static void setEquationsFromJSON(){
+        Equation.purge();
         try{
             //Equation.equations.addAll(readEquationsFromFile());
             readEquationsFromFile().forEach(Equation::new);
@@ -140,7 +142,7 @@ public class CASRecursiveSolver implements VariableComputedObserver{
 
     public static void initialize() {
         evaluator.clearVariables();
-   /*     Variable force = new Variable("Force");
+    /*    Variable force = new Variable("Force");
         Variable mass = new Variable("Mass");
         Variable acceleration = new Variable("Acceleration");
         new Equation("Force==Mass*Acceleration",force,mass,acceleration);
@@ -153,6 +155,25 @@ public class CASRecursiveSolver implements VariableComputedObserver{
 
     public static void addVariable(String text) {
         new Variable(text);
+    }
+
+    public static void clearVariableJSON() throws IOException {
+        //TODO: Broken
+        Variable.purge();
+        FileWriter eqtWriter = new FileWriter(VARIABLE_PATH);
+        gson.toJson(Variable.getAllVariables(), eqtWriter);
+        eqtWriter.close();
+        save();
+        setVariablesFromJSON();
+    }
+
+    public static void clearEquationJSON() throws IOException {
+        Equation.purge();
+        FileWriter eqtWriter = new FileWriter(EQUATION_PATH);
+        gson.toJson(Equation.equations, eqtWriter);
+        eqtWriter.close();
+        save();
+        setEquationsFromJSON();
     }
 
     /**

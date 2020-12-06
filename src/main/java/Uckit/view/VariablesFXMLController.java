@@ -41,9 +41,11 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
         for(Variable v : CASRecursiveSolver.getKnowns()){
             FlowPane fp = new FlowPane();
 
-            Label var = new Label(v.toStringNoWork());
+            Label var = new Label(v.getName());
+            TextField ans = new TextField(v.getValue().toString());
+            ans.setEditable(false);
 
-            fp.getChildren().add(var);
+            fp.getChildren().addAll(ans, var);
             solvedVariables.getItems().add(fp);
 
         }
@@ -67,9 +69,7 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
                 }
             });
 
-            fp.getChildren().add(var);
-            fp.getChildren().add(enterValue);
-            fp.getChildren().add(compute);
+            fp.getChildren().addAll(compute,enterValue,var);
             unsolvedVariables.getItems().add(fp);
 
         }
@@ -112,6 +112,9 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
 
     public void reset(ActionEvent actionEvent) {
         //TODO: Reset the values of every variable to null
+        //This is a ghetto solution where we just save and re-read the JSON
+        UCKIT.solver.save();
+        UCKIT.solver.initialize();
     }
 
     public void addVariable(ActionEvent actionEvent) {

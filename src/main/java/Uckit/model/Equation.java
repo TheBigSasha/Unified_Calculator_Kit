@@ -60,6 +60,12 @@ public class Equation implements VariableComputedObserver{
         return null;
     }
 
+    public static void purge() {
+        List<Equation> toDelete = new ArrayList<>(equations);
+        toDelete.forEach(Equation::delete);
+        equations.clear();
+    }
+
 
     public boolean isSolved() {
         return isSolved;

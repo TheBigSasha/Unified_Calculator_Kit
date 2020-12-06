@@ -70,7 +70,7 @@ public class EquationsFXMLController implements Initializable,UIChangedObserver 
                     Toast.makeText(null,ex.getMessage(), 1000,300,300);
                 }
             });
-            fp.getChildren().addAll(l,remove);
+            fp.getChildren().addAll(remove,l);
             equations.getItems().add(fp);
         }
     }

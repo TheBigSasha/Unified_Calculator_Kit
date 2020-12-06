@@ -70,6 +70,14 @@ public class Variable implements VariableComputedObserver {
         return get(inputVariableName) != null;
     }
 
+    public static void purge() {
+        Equation.purge();
+        new ArrayList<>(getAllVariables()).forEach(Variable::delete);
+        variableFromName.clear();
+        derivedFrom.clear();
+        includedIn.clear();
+    }
+
     public void addDerivedFrom(Equation... equations){
         derivedFrom.computeIfAbsent(this, k -> new HashSet<>());
         for(Equation equation : derivedFrom.get(this)) {

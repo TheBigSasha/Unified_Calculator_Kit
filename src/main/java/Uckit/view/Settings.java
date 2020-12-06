@@ -2,9 +2,12 @@ package Uckit.view;
 
 
 import Uckit.application.UCKIT;
+import Uckit.model.CASRecursiveSolver;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import org.checkerframework.checker.guieffect.qual.UI;
 
 import java.awt.*;
 import java.io.IOException;
@@ -107,5 +110,45 @@ public class Settings implements Initializable, UIChangedObserver {
         GradientChooser.setOnAction(event -> {
             notifyOthers(new UIEvent(ChangeArea.THEME).withExtraData(GradientChooser.getValue()));
         });
+    }
+
+    public void clearVariables(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Once deleted, variables cannot be recovered. All equations will also be purged. Continue?", ButtonType.YES, ButtonType.CANCEL);
+        alert.setHeaderText("Deletion confirmation");
+        DialogPane dp2 = alert.getDialogPane();
+        dp2.getStylesheets().addAll(UCKIT.currentCSS, "/styles.css");
+        dp2.getStyleClass().addAll("subhead","body");
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            try {
+                CASRecursiveSolver.clearVariableJSON();
+                notifyOthers(new UIEvent(ChangeArea.CALCULATION));
+                Toast.makeText(null,"Successfully purged variables, equations",1000,300,300);
+            }catch(Exception ex){
+                Toast.makeText(null,"Unable to purge because " + ex.getMessage(),1000,300,300);
+            }
+            CASRecursiveSolver.initialize();
+        }
+    }
+
+    public void clearEquations(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Once deleted, equations cannot be recovered. Continue?", ButtonType.YES, ButtonType.CANCEL);
+        alert.setHeaderText("Deletion confirmation");
+        DialogPane dp2 = alert.getDialogPane();
+        dp2.getStylesheets().addAll(UCKIT.currentCSS, "/styles.css");
+        dp2.getStyleClass().addAll("subhead","body");
+        alert.showAndWait();
+
+        if (alert.getResult() == ButtonType.YES) {
+            try {
+                CASRecursiveSolver.clearEquationJSON();
+                notifyOthers(new UIEvent(ChangeArea.CALCULATION));
+                Toast.makeText(null,"Successfully purged equations",1000,300,300);
+            }catch(Exception ex){
+                Toast.makeText(null,"Unable to purge because " + ex.getMessage(),1000,300,300);
+            }
+            CASRecursiveSolver.initialize();
+        }
     }
 }
