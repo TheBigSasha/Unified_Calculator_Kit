@@ -8,6 +8,10 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven{
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+
 }
 
 dependencies {
@@ -15,6 +19,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'org.matheclipse:matheclipse-core:1.0.0-SNAPSHOT'
     compile 'javax.measure:unit-api:2.0-PRD'
-    compile 'org.appdapter:ext.bundle.math.symja_jas:1.2.3'
+    //implementation 'org.appdapter:ext.bundle.math.symja_jas:1.2.3'
     //compile 'de.uni-mannheim.rz.krum:jas:2.6.6017'      //TODO: Which CAS system?
 }

@@ -6,6 +6,13 @@ import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import javax.measure.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import org.matheclipse.core.eval.EvalDouble;
+import org.matheclipse.core.expression.F;
+import org.matheclipse.core.interfaces.IAST;
+import org.matheclipse.core.interfaces.IExpr;
+import org.matheclipse.core.interfaces.ISymbol;
+import org.matheclipse.parser.client.SyntaxError;
+import org.matheclipse.parser.client.math.MathException;
 
 public class RecursiveSolver {
     static HashMap<String, Value> knowns = new HashMap<>();
