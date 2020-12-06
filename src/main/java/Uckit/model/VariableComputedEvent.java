@@ -1,4 +1,4 @@
-package Uckit;
+package Uckit.model;
 
 public class VariableComputedEvent {
     public VariableComputedEvent(Variable var) {

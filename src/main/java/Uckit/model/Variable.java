@@ -1,13 +1,12 @@
-package Uckit;
+package Uckit.model;
 
 import com.google.gson.annotations.SerializedName;
-import org.matheclipse.core.expression.Context;
 import org.matheclipse.core.expression.Symbol;
 
 import java.util.*;
 
-import static Uckit.CASRecursiveSolver.evaluator;
-import static Uckit.CASRecursiveSolver.uckit;
+import static Uckit.model.CASRecursiveSolver.evaluator;
+import static Uckit.model.CASRecursiveSolver.uckit;
 
 public class Variable implements VariableComputedObserver {
     //Numeric value of this

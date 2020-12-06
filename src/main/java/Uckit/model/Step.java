@@ -1,7 +1,4 @@
-package Uckit;
-
-import Uckit.Equation;
-import Uckit.Variable;
+package Uckit.model;
 
 public class Step{
     private boolean given = false;

@@ -1,4 +1,4 @@
-package Uckit;
+package Uckit.model;
 import javax.lang.model.element.VariableElement;
 import javax.xml.crypto.dsig.SignatureMethod;
 import java.text.SimpleDateFormat;

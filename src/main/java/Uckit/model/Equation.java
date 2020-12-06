@@ -1,10 +1,10 @@
-package Uckit;
+package Uckit.model;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.util.*;
 
-import static Uckit.CASRecursiveSolver.evaluator;
+import static Uckit.model.CASRecursiveSolver.evaluator;
 
 public class Equation implements VariableComputedObserver{
     public static final transient Set<Equation> equations = new HashSet<Equation>();
