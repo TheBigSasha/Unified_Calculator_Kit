@@ -14,7 +14,7 @@
     <center>
         <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
             <Tab text="Variables">
-                <fx:include source="Lists.fxml"/>
+                <fx:include source="Variables.fxml"/>
             </Tab>
             <Tab text="Equations">
                 <fx:include source="Equations.fxml"/>

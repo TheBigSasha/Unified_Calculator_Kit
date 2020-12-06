@@ -108,4 +108,8 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
 
         UCKIT.solver.startSolve();
     }
+
+    public void reset(ActionEvent actionEvent) {
+        //TODO: Reset the values of every variable to null
+    }
 }
