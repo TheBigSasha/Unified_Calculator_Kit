@@ -16,15 +16,15 @@ Uckit/view/Settings.java
  Uckit.view.Settings
 Uckit/model/VariableComputedObserver.java
  Uckit.model.VariableComputedObserver
-Uckit/application/UCKIT.java
- Uckit.application.UCKIT
- Uckit.application.UCKIT$1
+Uckit/model/Step.java
+ Uckit.model.Step
 Uckit/model/VariableComputedEvent.java
  Uckit.model.VariableComputedEvent
 Uckit/view/VariablesFXMLController.java
  Uckit.view.VariablesFXMLController
-Uckit/model/Step.java
- Uckit.model.Step
+Uckit/application/UCKIT.java
+ Uckit.application.UCKIT
+ Uckit.application.UCKIT$1
 Uckit/model/Equation.java
  Uckit.model.Equation
 Uckit/model/CASRecursiveSolver.java
