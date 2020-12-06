@@ -1,16 +1,61 @@
 package Uckit;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.*;
 
 import static Uckit.CASRecursiveSolver.evaluator;
 
 public class Equation implements VariableComputedObserver{
-    public static final Set<Equation> equations = new HashSet<Equation>();
+    public static final transient Set<Equation> equations = new HashSet<Equation>();
 
+    @SerializedName("EquationString")
     private final String equationString;
+    @SerializedName("Solved")
     private boolean isSolved = false;
+    @SerializedName("ReturnVariable")
     private Variable returnType;
+    @SerializedName("MemberVariables")
     private Variable[] members;
+
+    public Equation(Equation equation) {
+        String s = equation.equationString;
+        returnType = equation.returnType;
+        Variable[] variables = equation.members;
+
+
+        s = s.toUpperCase();
+        evaluator.eval(s);
+        equations.add(this);
+        equationString = s;
+        members = variables;
+        returnType.addDerivedFrom(this);
+        if(returnType.hasValue()) isSolved = true;
+
+        for(Variable v : members){
+            v.addIncludedIn(this);
+            if(!v.hasValue()) {
+                String derEq = evaluator.eval("solve(" + equationString + "," + v.getName() + ")").toScript().replace("->","==").replace("{","").replace("}","");
+                Variable[] vars = new Variable[members.length];
+                for (int i = 0; i < members.length; i++) {
+                    if(members[i].equals(v)){
+                        vars[i] = returnType;
+                    }else {
+                        vars[i] = members[i];
+                    }
+                }
+                new Equation(false, derEq, v, vars);
+            }
+        }
+
+
+        notifyOthers(new VariableComputedEvent(returnType));
+    }
+
+    public static void set(Set<Equation> json) {
+        equations.clear();
+        equations.addAll(json);
+    }
 
 
     public boolean isSolved() {

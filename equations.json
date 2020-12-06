@@ -1,0 +1,151 @@
+[
+  {
+    "Value": 2.0,
+    "Name": "A",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "A"
+    },
+    "Description": "",
+    "Steps": [
+      {
+        "given": false,
+        "fromName": "Equation [M\u003d\u003dF/A]",
+        "varName": "M"
+      },
+      {
+        "given": true,
+        "varName": "A"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [F\u003d\u003dM*A]",
+        "varName": "F"
+      },
+      {
+        "given": true,
+        "varName": "M"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [A\u003d\u003dF/M]",
+        "varName": "A"
+      }
+    ]
+  },
+  {
+    "Value": 880.0,
+    "Name": "PRESSURE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "PRESSURE"
+    },
+    "Description": "",
+    "Steps": [
+      {
+        "given": true,
+        "varName": "AREA"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [PRESSURE \u003d\u003d F * AREA]",
+        "varName": "PRESSURE"
+      },
+      {
+        "given": true,
+        "varName": "A"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [F\u003d\u003dM*A]",
+        "varName": "F"
+      },
+      {
+        "given": true,
+        "varName": "M"
+      }
+    ]
+  },
+  {
+    "Value": 10.0,
+    "Name": "AREA",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "AREA"
+    },
+    "Description": "",
+    "Steps": [
+      {
+        "given": true,
+        "varName": "AREA"
+      }
+    ]
+  },
+  {
+    "Value": 88.0,
+    "Name": "F",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "F"
+    },
+    "Description": "",
+    "Steps": [
+      {
+        "given": true,
+        "varName": "AREA"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [F\u003d\u003d0.1*PRESSURE]",
+        "varName": "F"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [PRESSURE \u003d\u003d F * AREA]",
+        "varName": "PRESSURE"
+      },
+      {
+        "given": true,
+        "varName": "A"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [F\u003d\u003dM*A]",
+        "varName": "F"
+      },
+      {
+        "given": true,
+        "varName": "M"
+      }
+    ]
+  },
+  {
+    "Value": 44.0,
+    "Name": "M",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "M"
+    },
+    "Description": "",
+    "Steps": [
+      {
+        "given": false,
+        "fromName": "Equation [M\u003d\u003dF/A]",
+        "varName": "M"
+      },
+      {
+        "given": true,
+        "varName": "A"
+      },
+      {
+        "given": false,
+        "fromName": "Equation [F\u003d\u003dM*A]",
+        "varName": "F"
+      },
+      {
+        "given": true,
+        "varName": "M"
+      }
+    ]
+  }
+]

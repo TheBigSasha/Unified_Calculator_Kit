@@ -1,5 +1,6 @@
 package Uckit;
 
+import com.google.gson.annotations.SerializedName;
 import org.matheclipse.core.expression.Context;
 import org.matheclipse.core.expression.Symbol;
 
@@ -10,19 +11,34 @@ import static Uckit.CASRecursiveSolver.uckit;
 
 public class Variable implements VariableComputedObserver {
     //Numeric value of this
+    @SerializedName("Value")
     private Double value;
     //Name / symbol of variable
+    @SerializedName("Name")
     private String name;
     //Symbol of this variable CAS style
+    @SerializedName("Symbol")
     private Symbol symbol;
     //Description of this variable
+    @SerializedName("Description")
     private String description = "";
     //List of steps to get here
-    private final List<Step> steps = new ArrayList<>();
+    @SerializedName("Steps")
+    private final Set<Step> steps = new HashSet<>();
 
-    private static final HashMap<String, Variable> variableFromName = new HashMap<>();
-    public static final HashMap<Variable, Set<Equation>> derivedFrom = new HashMap<>();
-    public static final HashMap<Variable,Set<Equation>> includedIn = new HashMap<>();
+    private static transient final HashMap<String, Variable> variableFromName = new HashMap<>();
+    public static transient final HashMap<Variable, Set<Equation>> derivedFrom = new HashMap<>();
+    public static transient final HashMap<Variable,Set<Equation>> includedIn = new HashMap<>();
+
+    public Variable(Variable var) {
+        name = var.name;
+        symbol = new Symbol(var.symbol.getSymbolName(), uckit);
+        value = var.value;
+        description = var.description;
+        steps.addAll(var.steps);
+        variableFromName.put(name,this);
+        evaluator.eval(symbol);
+    }
 
     public static Collection<Variable> getAllVariables(){
         return variableFromName.values();
@@ -104,7 +120,7 @@ public class Variable implements VariableComputedObserver {
     }
 
     public List<Step> getSteps() {
-        return steps;
+        return Arrays.asList(steps.toArray(new Step[0]));
     }
 
     public void evaluate(double value, Step... steps){
@@ -151,41 +167,4 @@ public class Variable implements VariableComputedObserver {
     public String getName() {
         return name;
     }
-}
-
-class Step{
-    private boolean given = false;
-
-    private Equation from;
-
-    private Variable var;
-
-    public Step(Variable var){
-        this.var = var;
-        given = true;
-    }
-
-    public Step(Equation eq, Variable var){
-        this.var = var;
-        if(eq == null){
-            given = true;
-        }else{
-            from = eq;
-        }
-    }
-
-    public String toString(){
-        String res = "<" + var.getSymbol().getSymbolName();
-        if(given){
-            return res + " - Given>";
-        }else{
-            return res + " - " +from.toString()+">";
-        }
-    }
-
-
-    public Equation getFrom() {
-        return from;
-    }
-
 }
