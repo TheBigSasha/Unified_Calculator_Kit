@@ -183,4 +183,8 @@ public class Variable implements VariableComputedObserver {
         variableFromName.remove(this);
         includedIn.remove(this);
     }
+
+    public String toStringNoWork(){
+        return name + " " + value;
+    }
 }

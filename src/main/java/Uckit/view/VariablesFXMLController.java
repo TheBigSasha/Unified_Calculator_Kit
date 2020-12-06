@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-public class ListsFXMLController implements Initializable, UIChangedObserver {
+public class VariablesFXMLController implements Initializable, UIChangedObserver {
     public JFXListView unsolvedVariables;
     public JFXListView solvedVariables;
     private HashMap<Variable, TextField> tfs = new HashMap<>();
@@ -40,7 +40,7 @@ public class ListsFXMLController implements Initializable, UIChangedObserver {
         for(Variable v : CASRecursiveSolver.getKnowns()){
             FlowPane fp = new FlowPane();
 
-            Label var = new Label(v.toString());
+            Label var = new Label(v.toStringNoWork());
 
             fp.getChildren().add(var);
             solvedVariables.getItems().add(fp);

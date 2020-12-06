@@ -14,7 +14,6 @@
     <right>
     </right>
    <top>
-        <Button fx:id="solve" onAction="#solve" text="Solve" BorderPane.alignment="CENTER" />
    </top>
    <bottom>
       <FlowPane alignment="BASELINE_CENTER" prefHeight="56.0" prefWidth="600.0" BorderPane.alignment="CENTER">

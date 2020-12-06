@@ -138,13 +138,13 @@ public class CASRecursiveSolver implements VariableComputedObserver{
 
     public static void initialize() {
         evaluator.clearVariables();
-        Variable force = new Variable("F");
-        Variable mass = new Variable("M");
-        Variable acceleration = new Variable("A");
-        new Equation("F==M*A",force,mass,acceleration);
+        Variable force = new Variable("Force");
+        Variable mass = new Variable("Mass");
+        Variable acceleration = new Variable("Acceleration");
+        new Equation("Force==Mass*Acceleration",force,mass,acceleration);
         Variable area = new Variable("Area");
         Variable pressure = new Variable("Pressure");
-        new Equation("Pressure == F * Area", pressure, force,area);
+        new Equation("Pressure == Force * Area", pressure, force,area);
     }
 
     /**
