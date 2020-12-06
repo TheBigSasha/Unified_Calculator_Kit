@@ -8,30 +8,30 @@ Uckit/view/FXMLHost.java
  Uckit.view.FXMLHost
 Uckit/view/UIChangeManager.java
  Uckit.view.UIChangeManager
-Uckit/view/UIChangedObserver.java
- Uckit.view.UIChangedObserver
-Uckit/model/ObserverController.java
- Uckit.model.ObserverController
-Uckit/view/Settings.java
- Uckit.view.Settings
-Uckit/model/VariableComputedObserver.java
- Uckit.model.VariableComputedObserver
-Uckit/model/Step.java
- Uckit.model.Step
-Uckit/model/VariableComputedEvent.java
- Uckit.model.VariableComputedEvent
-Uckit/view/VariablesFXMLController.java
- Uckit.view.VariablesFXMLController
 Uckit/application/UCKIT.java
  Uckit.application.UCKIT
  Uckit.application.UCKIT$1
-Uckit/model/Equation.java
- Uckit.model.Equation
 Uckit/model/CASRecursiveSolver.java
  Uckit.model.CASRecursiveSolver
  Uckit.model.CASRecursiveSolver$1
  Uckit.model.CASRecursiveSolver$2
+Uckit/view/Settings.java
+ Uckit.view.Settings
+Uckit/view/VariablesFXMLController.java
+ Uckit.view.VariablesFXMLController
+Uckit/model/Step.java
+ Uckit.model.Step
+Uckit/model/VariableComputedEvent.java
+ Uckit.model.VariableComputedEvent
+Uckit/model/Equation.java
+ Uckit.model.Equation
+Uckit/model/ObserverController.java
+ Uckit.model.ObserverController
 Uckit/model/Variable.java
  Uckit.model.Variable
 Uckit/view/EquationsFXMLController.java
  Uckit.view.EquationsFXMLController
+Uckit/view/UIChangedObserver.java
+ Uckit.view.UIChangedObserver
+Uckit/model/VariableComputedObserver.java
+ Uckit.model.VariableComputedObserver

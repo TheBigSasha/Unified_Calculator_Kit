@@ -163,6 +163,10 @@ public class Equation implements VariableComputedObserver{
     }
 
     public void delete() {
+        for(Variable v : members){
+            v.removeEquation(this);
+        }
+        returnType.removeEquation(this);
         equations.remove(this);
     }
 

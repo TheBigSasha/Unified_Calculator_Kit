@@ -30,6 +30,7 @@ public class Variable implements VariableComputedObserver {
     public static transient final HashMap<Variable,Set<Equation>> includedIn = new HashMap<>();
 
     public Variable(Variable var) {
+        checkNullLists();
         name = var.name;
         symbol = new Symbol(var.symbol.getSymbolName(), uckit);
         value = var.value;
@@ -40,6 +41,7 @@ public class Variable implements VariableComputedObserver {
     }
 
     public Variable(Variable var, boolean noValue) {
+        checkNullLists();
         name = var.name;
         symbol = new Symbol(var.symbol.getSymbolName(), uckit);
         description = var.description;
@@ -56,6 +58,7 @@ public class Variable implements VariableComputedObserver {
     }
 
     public Variable(String name){
+        checkNullLists();
         name = name.toUpperCase();
         if(variableFromName.containsKey(name)){
             throw new IllegalArgumentException("Variable must have unique name");
@@ -202,5 +205,22 @@ public class Variable implements VariableComputedObserver {
 
     public String toStringNoWork(){
         return name + " " + value;
+    }
+
+    public void removeEquation(Equation equation) {
+        checkNullLists();
+        try {
+            derivedFrom.get(this).remove(equation);
+        }catch(Exception ignored){}
+        try {
+            includedIn.get(this).remove(equation);
+        }catch(Exception ignored){}
+
+    }
+
+    private void checkNullLists() {
+        derivedFrom.computeIfAbsent(this, k -> new HashSet<>());
+        includedIn.computeIfAbsent(this, k -> new HashSet<>());
+        //variableFromName.computeIfAbsent(name,k->this);
     }
 }

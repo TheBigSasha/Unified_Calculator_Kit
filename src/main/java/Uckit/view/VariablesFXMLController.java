@@ -10,8 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
+import org.checkerframework.checker.guieffect.qual.UI;
 
 import java.net.URL;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ResourceBundle;
@@ -40,7 +42,6 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
         unsolvedVariables.getItems().clear();
         for(Variable v : CASRecursiveSolver.getKnowns()){
             FlowPane fp = new FlowPane();
-
             Label var = new Label(v.getName());
             TextField ans = new TextField(v.getValue().toString());
             ans.setEditable(false);
@@ -58,7 +59,18 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
             TextField enterValue = new TextField();
             tfs.put(v,enterValue);
             Button compute = new Button("Set");
-            compute.setOnAction(e ->{
+            Button delete = new Button("Delete");   //TODO: Deleting a variable
+            delete.setOnAction(e->{
+                try {
+                    v.delete();
+                    notifyOthers(new UIEvent(ChangeArea.CALCULATION));
+                    refreshLists();
+                }catch(Exception ex){
+                    Toast.makeText(null,ex.getMessage(),1000,300,300);
+
+                }
+            });
+            compute.setOnAction(e ->{                   //TODO: This is not added because it is obsolete
                 try{
                     double val = Double.parseDouble(enterValue.getText());
                     v.evaluate(val);
@@ -69,7 +81,7 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
                 }
             });
 
-            fp.getChildren().addAll(compute,enterValue,var);
+            fp.getChildren().addAll(enterValue,var);
             unsolvedVariables.getItems().add(fp);
 
         }
@@ -120,8 +132,13 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
     public void addVariable(ActionEvent actionEvent) {
         try {
             if (!newVarName.getText().isBlank()) {
-                //TODO: Check to make sure variable name is not numeric
-                CASRecursiveSolver.addVariable(newVarName.getText());
+                try{
+                    Double.parseDouble(newVarName.getText());
+                    Toast.makeText(null,"Cannot create variable with numeric name",1000,300,300);
+                }catch(Exception ex){
+                    CASRecursiveSolver.addVariable(newVarName.getText());
+
+                }
                 notifyOthers(new UIEvent(ChangeArea.CALCULATION));
             }
         }catch(Exception e){
