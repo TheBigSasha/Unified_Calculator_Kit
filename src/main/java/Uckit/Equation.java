@@ -18,33 +18,74 @@ public class Equation implements VariableComputedObserver{
     }
 
     public Equation(String s, Variable returnType, Variable... variables){
+        s = s.toUpperCase();
         evaluator.eval(s);
         equations.add(this);
         equationString = s;
         members = variables;
-        for(Variable v : variables){
-            v.addIncludedIn(this);
-        }
         this.returnType = returnType;
         returnType.addDerivedFrom(this);
-
         if(returnType.hasValue()) isSolved = true;
+
+        for(Variable v : members){
+            v.addIncludedIn(this);
+            if(!v.hasValue()) {
+                String derEq = evaluator.eval("solve(" + equationString + "," + v.getName() + ")").toScript().replace("->","==").replace("{","").replace("}","");
+                Variable[] vars = new Variable[members.length];
+                for (int i = 0; i < members.length; i++) {
+                    if(members[i].equals(v)){
+                        vars[i] = returnType;
+                    }else {
+                        vars[i] = members[i];
+                    }
+                }
+                Equation anotherOne = new Equation(false, derEq, v, vars);
+            }
+        }
+
 
         notifyOthers(new VariableComputedEvent(returnType));
     }
 
-    public void evaluate() {
-        String exprStr = equationString;
-        for(Variable var : members){
-            exprStr = exprStr.replace(var.getSymbol().getSymbolName(),var.getValue().toString());
+    private Equation(boolean deriveMore, String s, Variable returnType, Variable... variables){
+        {
+            s = s.toUpperCase();
+            evaluator.eval(s);
+            equations.add(this);
+            equationString = s;
+            members = variables;
+            for (Variable v : variables) {
+                v.addIncludedIn(this);
+            }
+            this.returnType = returnType;
+            returnType.addDerivedFrom(this);
+
+            if (returnType.hasValue()) isSolved = true;
+
+            notifyOthers(new VariableComputedEvent(returnType));
         }
-        //double result = evaluator.eval("N(" + exprStr +")").evalDouble();
-        double result = evaluator.evalf(equationString);
-        List<Step> steps = new ArrayList<>();
-        Arrays.asList(members).forEach(e->steps.addAll((e.getSteps())));
-        steps.add(new Step(this, returnType));
-        returnType.evaluate(result, steps.toArray(new Step[0]));
-        isSolved = true;
+    }
+
+    public void evaluate() {
+        if(!this.isSolved()) {
+            for (Variable var : members) {
+                if (!var.hasValue()) throw new IllegalArgumentException("Variable " + var + " not known in equation " + this);
+            }
+            //double result = evaluator.eval("N(" + exprStr +")").evalDouble();
+            //double result = evaluator.evalf("solve("+equationString+","+returnType.getName()+")");
+            double result;
+            try {
+                //result = Double.parseDouble(evaluator.eval("Solve(" + equationString + "," + returnType.getName() + ")").toString().replace("{{" + returnType.getName() + "->", "").replace("}}", ""));
+                result = evaluator.eval("N(" + equationString +")").evalDouble();
+            } catch (Exception e) {
+                result = evaluator.evalf(equationString.replace("==", "="));
+            }
+            List<Step> steps = new ArrayList<>();
+            Arrays.asList(members).forEach(e -> steps.addAll((e.getSteps())));
+            steps.add(new Step(this, returnType));
+            returnType.evaluate(result, steps.toArray(new Step[0]));
+            isSolved = true;
+        }
     }
 
     /**
@@ -63,6 +104,6 @@ public class Equation implements VariableComputedObserver{
     }
 
     public String toString(){
-        return "Equation " + equationString;
+        return "Equation [" + equationString+"]";
     }
 }

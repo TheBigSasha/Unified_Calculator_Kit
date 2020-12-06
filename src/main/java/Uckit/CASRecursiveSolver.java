@@ -1,6 +1,5 @@
 package Uckit;
 
-import com.google.errorprone.annotations.Var;
 import org.matheclipse.core.eval.ExprEvaluator;
 import org.matheclipse.core.expression.Context;
 
@@ -9,13 +8,19 @@ public class CASRecursiveSolver implements VariableComputedObserver{
     public static final Context uckit = new Context("uckit");
 
     public static void main(String args[]){
+        evaluator.clearVariables();
         Variable force = new Variable("F");
         Variable mass = new Variable("M");
         Variable acceleration = new Variable("A");
-        Equation forceEqualsMassTimesAcceleration = new Equation("F=M*A",force,mass,acceleration);
+        Equation forceEqualsMassTimesAcceleration = new Equation("F==M*A",force,mass,acceleration);
         mass.evaluate(44);
         acceleration.evaluate(2);
+        Variable area = new Variable("Area");
+        area.evaluate(10);
+        Variable pressure = new Variable("Pressure");
+        Equation forceAreaEqualsPressure = new Equation("Pressure == F * Area", pressure, force,area);
         startSolve();
+        System.out.println(equationsToString());
         System.out.println(knownsToString());
     }
 
@@ -29,6 +34,14 @@ public class CASRecursiveSolver implements VariableComputedObserver{
         return sb.toString();
     }
 
+    private static String equationsToString(){
+        StringBuilder sb = new StringBuilder();
+        for(Equation var : Equation.equations){
+            sb.append(var.toString()).append("\n");
+        }
+        return sb.toString();
+    }
+
     public static void startSolve(){
         boolean didProgress = false;
         for(Equation eq : Equation.equations){
@@ -38,7 +51,6 @@ public class CASRecursiveSolver implements VariableComputedObserver{
                     didProgress = true;
                 }
             }catch(Exception ignored){
-
             }
         }
         if(didProgress) {

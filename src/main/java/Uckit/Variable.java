@@ -33,6 +33,7 @@ public class Variable implements VariableComputedObserver {
     }
 
     public Variable(String name){
+        name = name.toUpperCase();
         if(variableFromName.containsKey(name)){
             throw new IllegalArgumentException("Variable must have unique name");
         }
@@ -129,6 +130,27 @@ public class Variable implements VariableComputedObserver {
     public String toString(){
         return "{ "+ symbol.getSymbolName() + " = " + value + " \n " + "Steps: " + getSteps() + "\n}";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Variable)) return false;
+        Variable variable = (Variable) o;
+        return Objects.equals(getValue(), variable.getValue()) &&
+                Objects.equals(name, variable.name) &&
+                Objects.equals(getSymbol(), variable.getSymbol()) &&
+                Objects.equals(getDescription(), variable.getDescription()) &&
+                Objects.equals(getSteps(), variable.getSteps());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getValue(), name, getSymbol(), getDescription(), getSteps());
+    }
+
+    public String getName() {
+        return name;
+    }
 }
 
 class Step{
@@ -153,11 +175,11 @@ class Step{
     }
 
     public String toString(){
-        String res = var.getSymbol().getSymbolName();
+        String res = "<" + var.getSymbol().getSymbolName();
         if(given){
-            return res + " - Given";
+            return res + " - Given>";
         }else{
-            return res + " - " +from.toString();
+            return res + " - " +from.toString()+">";
         }
     }
 
