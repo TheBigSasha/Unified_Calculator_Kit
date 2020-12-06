@@ -1,5 +1,10 @@
 package Uckit.model;
 
+import Uckit.view.ChangeArea;
+import Uckit.view.UIChangeManager;
+import Uckit.view.UIChangedObserver;
+import Uckit.view.UIEvent;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,16 +27,3 @@ public interface VariableComputedObserver {
     }
 }
 
-class ObserverController{
-    private static final Set<VariableComputedObserver> observers = new HashSet<>();
-
-    public static void notifyAll(VariableComputedEvent event) {
-        for(VariableComputedObserver observer : observers){
-            observer.notify(event);
-        }
-    }
-
-    public static void subscribe(VariableComputedObserver variableComputedObserver) {
-        observers.add(variableComputedObserver);
-    }
-}

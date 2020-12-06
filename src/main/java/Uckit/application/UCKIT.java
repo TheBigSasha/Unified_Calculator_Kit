@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import jfxtras.scene.layout.HBox;
 
 import java.util.*;
 
@@ -39,6 +40,8 @@ public class UCKIT extends Application {
         //TODO: query API for more messages
 
     }
+
+    public static final CASRecursiveSolver solver = new CASRecursiveSolver();
 
 
     public static void main(String args[]){
@@ -87,7 +90,7 @@ public class UCKIT extends Application {
     }
 
     private void exitProgram() {
-        CASRecursiveSolver.save();
+        solver.save();
         System.exit(0);
     }
 }

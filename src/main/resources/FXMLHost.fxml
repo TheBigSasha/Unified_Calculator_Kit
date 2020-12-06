@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Uckit.view.FXMLHost" fx:id="mainBorderView">
+<BorderPane fx:id="mainBorderView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Uckit.view.FXMLHost">
    <top>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="topBar"/>
+      <BorderPane fx:id="topBar" prefHeight="69.0" prefWidth="200.0" BorderPane.alignment="CENTER" styleClass="sunset">
+          <center>
+              <Label text="F.Uckit" styleClass="title_top, force-white"/>
+          </center>
+      </BorderPane>
    </top>
     <center>
-        <fx:include source="Settings.fxml"/>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <Tab text="Lists">
+                <fx:include source="Lists.fxml"/>
+            </Tab>
+            <Tab text="Settings">
+                <fx:include source="Settings.fxml"/>
+            </Tab>
+        </TabPane>
     </center>
+   <left>
+
+   </left>
 </BorderPane>

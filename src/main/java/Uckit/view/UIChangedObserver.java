@@ -22,16 +22,3 @@ public interface UIChangedObserver {
 
 }
 
-class UIChangeManager{
-    private static final Set<UIChangedObserver> observers = new HashSet<>();
-
-    public static void subscribe(UIChangedObserver uiChangedObserver) {
-        observers.add(uiChangedObserver);
-    }
-
-    public static void notifyAll(UIEvent event){
-        for(UIChangedObserver obs : observers){
-            obs.notify(event);
-        }
-    }
-}

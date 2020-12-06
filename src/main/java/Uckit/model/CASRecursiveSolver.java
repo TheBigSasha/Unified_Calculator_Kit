@@ -23,18 +23,14 @@ public class CASRecursiveSolver implements VariableComputedObserver{
     private static final Type EQUATION_TYPE = new TypeToken<Set<Equation>>() {}.getType();
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
+    public CASRecursiveSolver(){
+        initialize();
+        System.out.println(knownsToString());
+        System.out.println(equationsToString());
+    }
+
     public static void main(String args[]){
-        evaluator.clearVariables();
-        Variable force = new Variable("F");
-        Variable mass = new Variable("M");
-        Variable acceleration = new Variable("A");
-        new Equation("F==M*A",force,mass,acceleration);
-        mass.evaluate(44);
-        acceleration.evaluate(2);
-        Variable area = new Variable("Area");
-        area.evaluate(10);
-        Variable pressure = new Variable("Pressure");
-        new Equation("Pressure == F * Area", pressure, force,area);
+        initialize();
         startSolve();
         System.out.println(equationsToString());
         System.out.println(knownsToString());
@@ -138,6 +134,17 @@ public class CASRecursiveSolver implements VariableComputedObserver{
 
 
         return gson.fromJson(bufferedReader, VARIABLE_TYPE);
+    }
+
+    public static void initialize() {
+        evaluator.clearVariables();
+        Variable force = new Variable("F");
+        Variable mass = new Variable("M");
+        Variable acceleration = new Variable("A");
+        new Equation("F==M*A",force,mass,acceleration);
+        Variable area = new Variable("Area");
+        Variable pressure = new Variable("Pressure");
+        new Equation("Pressure == F * Area", pressure, force,area);
     }
 
     /**
