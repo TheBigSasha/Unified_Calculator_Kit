@@ -58,6 +58,10 @@ public class Variable implements VariableComputedObserver {
         evaluator.eval(symbol);
     }
 
+    public static boolean has(String inputVariableName) {
+        return get(inputVariableName) != null;
+    }
+
     public void addDerivedFrom(Equation... equations){
         derivedFrom.computeIfAbsent(this, k -> new HashSet<>());
         for(Equation equation : derivedFrom.get(this)) {
@@ -165,5 +169,18 @@ public class Variable implements VariableComputedObserver {
 
     public String getName() {
         return name;
+    }
+
+    public void delete() {
+        for(Equation eq : derivedFrom.get(this)){
+            eq.delete();
+        }
+
+        for(Equation eq : includedIn.get(this)){
+            eq.delete();
+        }
+        derivedFrom.remove(this);
+        variableFromName.remove(this);
+        includedIn.remove(this);
     }
 }

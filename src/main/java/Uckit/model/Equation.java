@@ -57,6 +57,13 @@ public class Equation implements VariableComputedObserver{
         equations.addAll(json);
     }
 
+    public static Equation get(String name) {
+        for(Equation eq : equations){
+            if(eq.equationString.equals(name)) return eq;
+        }
+        return null;
+    }
+
 
     public boolean isSolved() {
         return isSolved;
@@ -150,5 +157,9 @@ public class Equation implements VariableComputedObserver{
 
     public String toString(){
         return "Equation [" + equationString+"]";
+    }
+
+    public void delete() {
+        equations.remove(this);
     }
 }

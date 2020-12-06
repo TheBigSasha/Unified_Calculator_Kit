@@ -1,5 +1,6 @@
 package Uckit.model;
 
+import com.google.errorprone.annotations.Var;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
@@ -9,6 +10,7 @@ import org.matheclipse.core.expression.Context;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -152,4 +154,70 @@ public class CASRecursiveSolver implements VariableComputedObserver{
             }
         }
     }
+
+    public static Set<Variable> getUnsolved(){
+        Set<Variable> out = new HashSet<>();
+        for(Variable v : Variable.getAllVariables()){
+            if(!v.hasValue()){
+                out.add(v);
+            }
+        }
+        return out;
+    }
+
+    public static Set<Variable> getKnowns(){
+        Set<Variable> out = new HashSet<>();
+        for(Variable v : Variable.getAllVariables()){
+            if(v.hasValue()){
+                out.add(v);
+            }
+        }
+        return out;
+    }
+
+    public static Set<Equation> getEquations(){
+        return Equation.equations;
+    }
+
+    public static void addEquation(String equation, String outputVariableName, String... inputVariableNames){
+        Variable out = Variable.get(outputVariableName);
+        if(out == null) out = new Variable(outputVariableName);
+
+        Variable[] inputVars = new Variable[inputVariableNames.length];
+        for (int i = 0, inputVariableNamesLength = inputVariableNames.length; i < inputVariableNamesLength; i++) {
+            if(Variable.has(inputVariableNames[i])) {
+                inputVars[i] = Variable.get(inputVariableNames[i]);
+            }else{
+                Variable v = new Variable(inputVariableNames[i]);
+                inputVars[i] = v;
+            }
+        }
+        new Equation(equation,out,inputVars);
+    }
+
+    public static void setVariable(String name, Double value){
+        if(Variable.has(name)){
+            Variable v = Variable.get(name);
+            v.evaluate(value);
+        }else{
+            Variable v = new Variable(name).withValue(value);
+        }
+    }
+
+    public static void removeVariable(String name){
+        Variable.get(name).delete();
+    }
+
+    public static void removeEquation(String name){
+        if (Equation.get(name) != null) {
+            for(Set<Equation> eqs : Variable.includedIn.values()){
+                eqs.remove(Equation.get(name));
+            }
+            for(Set<Equation> eqs : Variable.derivedFrom.values()){
+                eqs.remove(Equation.get(name));
+            }
+            Equation.get(name).delete();
+        }
+    }
+
 }
