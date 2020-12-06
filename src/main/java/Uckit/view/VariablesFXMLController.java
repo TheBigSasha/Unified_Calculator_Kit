@@ -20,6 +20,7 @@ import java.util.Set;
 public class VariablesFXMLController implements Initializable, UIChangedObserver {
     public JFXListView unsolvedVariables;
     public JFXListView solvedVariables;
+    public TextField newVarName;
     private HashMap<Variable, TextField> tfs = new HashMap<>();
 
     /**
@@ -111,5 +112,17 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
 
     public void reset(ActionEvent actionEvent) {
         //TODO: Reset the values of every variable to null
+    }
+
+    public void addVariable(ActionEvent actionEvent) {
+        try {
+            if (!newVarName.getText().isBlank()) {
+                //TODO: Check to make sure variable name is not numeric
+                CASRecursiveSolver.addVariable(newVarName.getText());
+                notifyOthers(new UIEvent(ChangeArea.CALCULATION));
+            }
+        }catch(Exception e){
+            Toast.makeText(null,e.getMessage(),1000,300,300);
+        }
     }
 }

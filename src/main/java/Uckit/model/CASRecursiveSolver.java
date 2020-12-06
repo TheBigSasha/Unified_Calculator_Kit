@@ -145,6 +145,12 @@ public class CASRecursiveSolver implements VariableComputedObserver{
         Variable area = new Variable("Area");
         Variable pressure = new Variable("Pressure");
         new Equation("Pressure == Force * Area", pressure, force,area);
+/*        setEquationsFromJSON();
+        setVariablesFromJSON();*/
+    }
+
+    public static void addVariable(String text) {
+        new Variable(text);
     }
 
     /**
