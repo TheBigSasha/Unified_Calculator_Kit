@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-//TODO: Persistence
+
 public class CASRecursiveSolver implements VariableComputedObserver{
     public static final ExprEvaluator evaluator = new ExprEvaluator();
     public static final Context uckit = new Context("uckit");
