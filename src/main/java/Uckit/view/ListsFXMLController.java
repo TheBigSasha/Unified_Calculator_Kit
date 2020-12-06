@@ -12,11 +12,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class ListsFXMLController implements Initializable, UIChangedObserver {
     public JFXListView unsolvedVariables;
     public JFXListView solvedVariables;
+    private HashMap<Variable, TextField> tfs = new HashMap<>();
 
     /**
      * @param event
@@ -30,6 +34,7 @@ public class ListsFXMLController implements Initializable, UIChangedObserver {
     }
 
     private void refreshLists() {
+        tfs.clear();
         solvedVariables.getItems().clear();
         unsolvedVariables.getItems().clear();
         for(Variable v : CASRecursiveSolver.getKnowns()){
@@ -48,12 +53,14 @@ public class ListsFXMLController implements Initializable, UIChangedObserver {
             Label var = new Label(v.getName());
 
             TextField enterValue = new TextField();
+            tfs.put(v,enterValue);
             Button compute = new Button("Set");
             compute.setOnAction(e ->{
                 try{
                     double val = Double.parseDouble(enterValue.getText());
                     v.evaluate(val);
                     notifyOthers(new UIEvent(ChangeArea.CALCULATION).withExtraData(v));
+                    UCKIT.solver.startSolve();
                 }catch(Exception ex){
                     Toast.makeText(null,ex.getMessage(),1000,300,300);
                 }
@@ -82,6 +89,23 @@ public class ListsFXMLController implements Initializable, UIChangedObserver {
     }
 
     public void solve(ActionEvent ex){
+        HashMap<Variable, Double> toSet = new HashMap<>();
+        for(Variable v : tfs.keySet()){
+            if(!tfs.get(v).getText().isBlank()){
+                try{
+                    double val = Double.parseDouble(tfs.get(v).getText());
+                    toSet.put(v,val);
+                }catch(Exception d){
+                    Toast.makeText(null,d.getMessage(),1000,300,300);
+                }
+            }
+        }
+         ((Runnable) () -> {
+             for (Variable v : toSet.keySet()) {
+                 v.evaluate(toSet.get(v));
+             }
+         }).run();
+
         UCKIT.solver.startSolve();
     }
 }

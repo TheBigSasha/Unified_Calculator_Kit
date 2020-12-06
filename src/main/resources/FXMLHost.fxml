@@ -13,8 +13,11 @@
    </top>
     <center>
         <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-            <Tab text="Lists">
+            <Tab text="Variables">
                 <fx:include source="Lists.fxml"/>
+            </Tab>
+            <Tab text="Equations">
+                <fx:include source="Equations.fxml"/>
             </Tab>
             <Tab text="Settings">
                 <fx:include source="Settings.fxml"/>

@@ -90,7 +90,9 @@ public class UCKIT extends Application {
     }
 
     private void exitProgram() {
-        solver.save();
+        try {
+            solver.save();
+        }catch(Exception ignored){}
         System.exit(0);
     }
 }

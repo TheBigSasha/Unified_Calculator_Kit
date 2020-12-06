@@ -224,6 +224,8 @@ public class CASRecursiveSolver implements VariableComputedObserver{
                 eqs.remove(Equation.get(name));
             }
             Equation.get(name).delete();
+        }else{
+            throw new IllegalArgumentException("The equation " + name + " does not exist");
         }
     }
 

@@ -59,6 +59,10 @@ public class Equation implements VariableComputedObserver{
 
     public static Equation get(String name) {
         for(Equation eq : equations){
+            if(eq.toString().equals(name)) return eq;
+        }
+
+        for(Equation eq : equations){
             if(eq.equationString.equals(name)) return eq;
         }
         return null;
