@@ -5,24 +5,28 @@ import Uckit.model.CASRecursiveSolver;
 import Uckit.model.Variable;
 import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import org.checkerframework.checker.guieffect.qual.UI;
+import org.controlsfx.control.PopOver;
 
+import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.ResourceBundle;
-import java.util.Set;
+import java.util.*;
 
 public class VariablesFXMLController implements Initializable, UIChangedObserver {
     public JFXListView unsolvedVariables;
     public JFXListView solvedVariables;
     public TextField newVarName;
+    public BorderPane hostPane;
     private HashMap<Variable, TextField> tfs = new HashMap<>();
 
     /**
@@ -40,6 +44,25 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
         tfs.clear();
         solvedVariables.getItems().clear();
         unsolvedVariables.getItems().clear();
+
+        //HARD CODED VARIABLES
+        ArrayList<String> hardCodes = new ArrayList<String>(Arrays.asList("NPV"));
+      /*  for(String s : hardCodes){
+            if(Variable.get(s) == null){
+                new Variable(s);
+            }
+            Variable var = Variable.get(s);
+            if(!var.hasValue()){
+
+            }else{
+
+            }
+        }*/
+
+
+        //END HARD CODED
+
+
         for(Variable v : CASRecursiveSolver.getKnowns()){
             FlowPane fp = new FlowPane();
             Label var = new Label(v.getName());
@@ -51,39 +74,89 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
 
         }
 
-        for(Variable v : CASRecursiveSolver.getUnsolved()){
-            FlowPane fp = new FlowPane();
+        for(Variable v : CASRecursiveSolver.getUnsolved()) {
+            if (hardCodes.contains(v.getName())) {
+                if (v.getName().equals("NPV")) {
+                    FlowPane fp = new FlowPane();
 
-            Label var = new Label(v.getName());
+                    Label var = new Label(v.getName());
 
-            TextField enterValue = new TextField();
-            tfs.put(v,enterValue);
-            Button compute = new Button("Set");
-            Button delete = new Button("Delete");   //TODO: Deleting a variable
-            delete.setOnAction(e->{
-                try {
-                    v.delete();
-                    notifyOthers(new UIEvent(ChangeArea.CALCULATION));
-                    refreshLists();
-                }catch(Exception ex){
-                    Toast.makeText(null,ex.getMessage(),1000,300,300);
+                    TextField enterValue = new TextField();
+                    tfs.put(v, enterValue);
+                    Button compute = new Button("Calculate");
+                    Button delete = new Button("Delete");   //TODO: Deleting a variable
+                    delete.setOnAction(e -> {
+                        try {
+                            v.delete();
+                            notifyOthers(new UIEvent(ChangeArea.CALCULATION));
+                            refreshLists();
+                        } catch (Exception ex) {
+                            Toast.makeText(null, ex.getMessage(), 1000, 300, 300);
 
+                        }
+                    });
+                    compute.setOnAction(e -> {                   //TODO: This is not added because it is obsolete
+                        try {
+                            PopOver po = new PopOver();
+                            try {
+                                FXMLLoader loader = new FXMLLoader(NPVCalculator.class.getResource("/NPVCalculator.fxml"));
+                                Node n = loader.load();
+                                NPVCalculator ea = loader.getController();
+                                ea.setResultField(enterValue);
+                                po.setContentNode(n);
+                                po.setCloseButtonEnabled(true);
+                                po.setTitle("Edit Appointment");
+                                po.setArrowSize(0);
+
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+                            po.show(hostPane.getScene().getWindow());
+                            ((Parent) po.getSkin().getNode()).getStylesheets().clear();
+                            ((Parent) po.getSkin().getNode()).getStylesheets().addAll(UCKIT.currentCSS, "styles.css");
+
+                        } catch (Exception ex) {
+                            Toast.makeText(null, ex.getCause().toString() + " " + ex.getMessage(), 1000, 300, 300);
+                        }
+                    });
+
+                    fp.getChildren().addAll(enterValue,compute, var);
+                    unsolvedVariables.getItems().add(fp);
                 }
-            });
-            compute.setOnAction(e ->{                   //TODO: This is not added because it is obsolete
-                try{
-                    double val = Double.parseDouble(enterValue.getText());
-                    v.evaluate(val);
-                    notifyOthers(new UIEvent(ChangeArea.CALCULATION).withExtraData(v));
-                    UCKIT.solver.startSolve();
-                }catch(Exception ex){
-                    Toast.makeText(null,ex.getMessage(),1000,300,300);
-                }
-            });
+            } else {
+                FlowPane fp = new FlowPane();
 
-            fp.getChildren().addAll(enterValue,var);
-            unsolvedVariables.getItems().add(fp);
+                Label var = new Label(v.getName());
 
+                TextField enterValue = new TextField();
+                tfs.put(v, enterValue);
+                Button compute = new Button("Set");
+                Button delete = new Button("Delete");   //TODO: Deleting a variable
+                delete.setOnAction(e -> {
+                    try {
+                        v.delete();
+                        notifyOthers(new UIEvent(ChangeArea.CALCULATION));
+                        refreshLists();
+                    } catch (Exception ex) {
+                        Toast.makeText(null, ex.getMessage(), 1000, 300, 300);
+
+                    }
+                });
+                compute.setOnAction(e -> {                   //TODO: This is not added because it is obsolete
+                    try {
+                        double val = Double.parseDouble(enterValue.getText());
+                        v.evaluate(val);
+                        notifyOthers(new UIEvent(ChangeArea.CALCULATION).withExtraData(v));
+                        UCKIT.solver.startSolve();
+                    } catch (Exception ex) {
+                        Toast.makeText(null, ex.getMessage(), 1000, 300, 300);
+                    }
+                });
+
+                fp.getChildren().addAll(enterValue, var);
+                unsolvedVariables.getItems().add(fp);
+
+            }
         }
     }
 

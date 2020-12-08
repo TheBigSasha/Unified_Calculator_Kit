@@ -6,11 +6,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import com.jfoenix.controls.JFXListView?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="Uckit.view.NPVCalculator"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="600.0"
+fx:id="hostPane">
+            <center>
+                <VBox>
+                    <HBox>
+                        <Label text="Inital Investment"/>
+                        <TextField fx:id="TF_INITIAL_INVESTMENT"/>
+                    </HBox>
+                    <HBox>
+                        <Label text="Discount Rate"/>
+                        <TextField fx:id="TF_DISCOUNT_RATE"/>
+                    </HBox>
+                    <JFXListView fx:id="LV_CASH_FLOWS"/>
+                    <HBox>
+                        <Label text="New Cash Flow"/>
+                        <TextField fx:id="TF_CASH_FLOW"/>
+                        <Button fx:id="BTN_ADD_CF" text="ADD"/>
+                    </HBox>
+                    <HBox>
+                        <Label text="Result"/>
+                        <TextField fx:id="TF_RESULT" editable="false"/>
+                    </HBox>
+                </VBox>
 
+            </center>
 
 </BorderPane>
 
