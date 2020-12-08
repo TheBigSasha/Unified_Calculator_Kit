@@ -5,7 +5,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WACCalculator implements Initializable,  UIChangedObserver {
+public class NPVCalculator implements Initializable,  UIChangedObserver {
     /**
      * @param event
      * @author Sasha
