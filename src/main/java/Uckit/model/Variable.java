@@ -1,5 +1,6 @@
 package Uckit.model;
 
+import Uckit.application.UCKIT;
 import com.google.gson.annotations.SerializedName;
 import org.matheclipse.core.expression.Symbol;
 
@@ -191,6 +192,8 @@ public class Variable implements VariableComputedObserver {
     }
 
     public void delete() {
+        //TODO: Clear the variable out of the evaluator
+        evaluator.defineVariable(symbol);
         for(Equation eq : derivedFrom.get(this)){
             eq.delete();
         }

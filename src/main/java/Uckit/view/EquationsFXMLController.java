@@ -129,6 +129,7 @@ public class EquationsFXMLController implements Initializable,UIChangedObserver 
     }
 
     public void addEquation(ActionEvent actionEvent) {
+        //TODO: clear variable values when adding a new equation
         try {
             List<String> inputVars = new ArrayList<>();
             this.inputVars.getItems().forEach(item -> {

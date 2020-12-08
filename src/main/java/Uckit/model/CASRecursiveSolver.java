@@ -88,6 +88,7 @@ public class CASRecursiveSolver implements VariableComputedObserver{
     }
 
     public static void setVariablesFromJSON(){
+        evaluator.clearVariables();
         try{
             List<Variable> vars = readVariablesFromFile();
             vars.forEach(var -> {
@@ -142,7 +143,7 @@ public class CASRecursiveSolver implements VariableComputedObserver{
 
     public static void initialize() {
         evaluator.clearVariables();
-    /*    Variable force = new Variable("Force");
+      /*  Variable force = new Variable("Force");
         Variable mass = new Variable("Mass");
         Variable acceleration = new Variable("Acceleration");
         new Equation("Force==Mass*Acceleration",force,mass,acceleration);

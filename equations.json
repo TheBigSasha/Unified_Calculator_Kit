@@ -1,1 +1,1784 @@
-[]
+[
+  {
+    "EquationString": "TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 4999.999999999999,
+      "Name": "TOTALDEBT",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "TOTALDEBT"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)]",
+          "varName": "TOTALDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": true,
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+          "varName": "WACC"
+        }
+      ]
+    },
+    "MemberVariables": [
+      {
+        "Value": 15000.000000000011,
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.07999999999999995,
+        "Name": "COSTDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.135,
+        "Name": "COSTEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.11725000000000001,
+        "Name": "WACC",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "WACC"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.20000000000000015,
+        "Name": "CORPTAXRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "CORPTAXRATE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "EquationString": "WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 0.11725000000000001,
+      "Name": "WACC",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "WACC"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": true,
+          "varName": "TOTALDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+          "varName": "WACC"
+        }
+      ]
+    },
+    "MemberVariables": [
+      {
+        "Value": 15000.000000000011,
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.07999999999999995,
+        "Name": "COSTDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.135,
+        "Name": "COSTEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 4999.999999999999,
+        "Name": "TOTALDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)]",
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.20000000000000015,
+        "Name": "CORPTAXRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "CORPTAXRATE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "EquationString": "COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 0.07999999999999995,
+      "Name": "COSTDEBT",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "COSTDEBT"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": true,
+          "varName": "TOTALDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+          "varName": "WACC"
+        }
+      ]
+    },
+    "MemberVariables": [
+      {
+        "Value": 15000.000000000011,
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.11725000000000001,
+        "Name": "WACC",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "WACC"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.135,
+        "Name": "COSTEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 4999.999999999999,
+        "Name": "TOTALDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)]",
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.20000000000000015,
+        "Name": "CORPTAXRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "CORPTAXRATE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "EquationString": "TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 15000.000000000011,
+      "Name": "TOTALEQUITY",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "TOTALEQUITY"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+          "varName": "WACC"
+        }
+      ]
+    },
+    "MemberVariables": [
+      {
+        "Value": 0.11725000000000001,
+        "Name": "WACC",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "WACC"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.07999999999999995,
+        "Name": "COSTDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.135,
+        "Name": "COSTEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 4999.999999999999,
+        "Name": "TOTALDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)]",
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.20000000000000015,
+        "Name": "CORPTAXRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "CORPTAXRATE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "EquationString": "COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 0.135,
+      "Name": "COSTEQUITY",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "COSTEQUITY"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+          "varName": "WACC"
+        }
+      ]
+    },
+    "MemberVariables": [
+      {
+        "Value": 15000.000000000011,
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.07999999999999995,
+        "Name": "COSTDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.11725000000000001,
+        "Name": "WACC",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "WACC"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 4999.999999999999,
+        "Name": "TOTALDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)]",
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.20000000000000015,
+        "Name": "CORPTAXRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "CORPTAXRATE"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "EquationString": "CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)",
+    "Solved": true,
+    "ReturnVariable": {
+      "Value": 0.20000000000000015,
+      "Name": "CORPTAXRATE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "CORPTAXRATE"
+      },
+      "Description": "",
+      "Steps": [
+        {
+          "given": true,
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "TOTALDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": true,
+          "varName": "COSTDEBT"
+        },
+        {
+          "given": true,
+          "varName": "COSTEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+          "varName": "CORPTAXRATE"
+        },
+        {
+          "given": true,
+          "varName": "TOTALEQUITY"
+        },
+        {
+          "given": false,
+          "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+          "varName": "WACC"
+        }
+      ]
+    },
+    "MemberVariables": [
+      {
+        "Value": 15000.000000000011,
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.07999999999999995,
+        "Name": "COSTDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.135,
+        "Name": "COSTEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTEQUITY"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 4999.999999999999,
+        "Name": "TOTALDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALDEBT"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)]",
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)]",
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [COSTEQUITY\u003d\u003d(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC+TOTALEQUITY*WACC)/TOTALEQUITY]",
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)]",
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)]",
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      },
+      {
+        "Value": 0.11725000000000001,
+        "Name": "WACC",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "WACC"
+        },
+        "Description": "",
+        "Steps": [
+          {
+            "given": true,
+            "varName": "CORPTAXRATE"
+          },
+          {
+            "given": true,
+            "varName": "TOTALDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTDEBT"
+          },
+          {
+            "given": true,
+            "varName": "COSTEQUITY"
+          },
+          {
+            "given": true,
+            "varName": "TOTALEQUITY"
+          },
+          {
+            "given": false,
+            "fromName": "Equation [WACC \u003d\u003d ((TOTALEQUITY / (TOTALEQUITY + TOTALDEBT)) * COSTEQUITY) + (TOTALDEBT / (TOTALEQUITY + TOTALDEBT)) * COSTDEBT * (1 - CORPTAXRATE)]",
+            "varName": "WACC"
+          }
+        ]
+      }
+    ]
+  }
+]

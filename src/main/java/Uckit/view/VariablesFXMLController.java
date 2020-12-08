@@ -125,8 +125,8 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
     public void reset(ActionEvent actionEvent) {
         //TODO: Reset the values of every variable to null
         //This is a ghetto solution where we just save and re-read the JSON
-        UCKIT.solver.save();
-        UCKIT.solver.initialize();
+        CASRecursiveSolver.save();
+        CASRecursiveSolver.initialize();
     }
 
     public void addVariable(ActionEvent actionEvent) {
