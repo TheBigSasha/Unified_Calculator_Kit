@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.Flow;
 
-public class EquationsFXMLController implements Initializable,UIChangedObserver {
+public class EquationsController implements Initializable,UIChangedObserver {
     @FXML
     public JFXListView equations;
     public CheckComboBox<String> inputVars;

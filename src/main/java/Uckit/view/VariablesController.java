@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import org.checkerframework.checker.guieffect.qual.UI;
@@ -22,11 +23,12 @@ import java.net.URL;
 import java.text.ParseException;
 import java.util.*;
 
-public class VariablesFXMLController implements Initializable, UIChangedObserver {
+public class VariablesController implements Initializable, UIChangedObserver {
     public JFXListView unsolvedVariables;
     public JFXListView solvedVariables;
     public TextField newVarName;
     public BorderPane hostPane;
+    public TextField description;
     private HashMap<Variable, TextField> tfs = new HashMap<>();
 
     /**
@@ -80,6 +82,7 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
                     FlowPane fp = new FlowPane();
 
                     Label var = new Label(v.getName());
+                    if(v.getDescription() != null) var.setTooltip(new Tooltip(v.getDescription()));
 
                     TextField enterValue = new TextField();
                     tfs.put(v, enterValue);
@@ -127,6 +130,7 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
                 FlowPane fp = new FlowPane();
 
                 Label var = new Label(v.getName());
+                if(v.getDescription() != null) var.setTooltip(new Tooltip(v.getDescription()));
 
                 TextField enterValue = new TextField();
                 tfs.put(v, enterValue);
@@ -210,6 +214,7 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
                     Toast.makeText(null,"Cannot create variable with numeric name",1000,300,300);
                 }catch(Exception ex){
                     CASRecursiveSolver.addVariable(newVarName.getText());
+                    if(!description.getText().isEmpty()) Variable.get(newVarName.getText()).setDescription(description.getText());
 
                 }
                 notifyOthers(new UIEvent(ChangeArea.CALCULATION));
