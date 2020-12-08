@@ -105,7 +105,7 @@ public class VariablesFXMLController implements Initializable, UIChangedObserver
                                 ea.setResultField(enterValue);
                                 po.setContentNode(n);
                                 po.setCloseButtonEnabled(true);
-                                po.setTitle("Edit Appointment");
+                                po.setTitle("Calculate NPV");
                                 po.setArrowSize(0);
 
                             } catch (IOException ex) {

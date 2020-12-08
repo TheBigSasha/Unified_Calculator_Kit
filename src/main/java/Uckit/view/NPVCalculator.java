@@ -25,7 +25,7 @@ public class NPVCalculator implements Initializable,  UIChangedObserver {
     public Button BTN_ADD_CF;
     public TextField TF_RESULT;
 
-    private final HashMap<Node, Double> cashFlowsMap = new HashMap<>();
+    private final ArrayList<Double> cashFlows = new ArrayList<>();
     public BorderPane hostPane;
     private TextField resultField;
 
@@ -40,9 +40,9 @@ public class NPVCalculator implements Initializable,  UIChangedObserver {
 
     private void evaluate(){
         try{
-            TF_RESULT.setText(evaluate(TF_INITIAL_INVESTMENT.getText(),TF_DISCOUNT_RATE.getText(),cashFlowsMap.values()).toString());
+            TF_RESULT.setText(evaluate(TF_INITIAL_INVESTMENT.getText(),TF_DISCOUNT_RATE.getText(),cashFlows).toString());
             if(resultField != null){
-                resultField.setText(evaluate(TF_INITIAL_INVESTMENT.getText(),TF_DISCOUNT_RATE.getText(),cashFlowsMap.values()).toString());
+                resultField.setText(evaluate(TF_INITIAL_INVESTMENT.getText(),TF_DISCOUNT_RATE.getText(),cashFlows).toString());
             }
         }catch(Exception ex){
             Toast.makeText(null,ex.getMessage(),1000,300,300);
@@ -53,12 +53,12 @@ public class NPVCalculator implements Initializable,  UIChangedObserver {
         double r = Double.parseDouble(discountRate);
         double initInvest = Double.parseDouble(initialInvestment);
         ArrayList<Double> cfs = new ArrayList<>();
-        cfs.add((-1.0) * initInvest);
+        cfs.add(-1.0 * initInvest);
         cfs.addAll(cashflows);
         double result = 0.;
         for(int i = 0; i < cfs.size(); i++){
             double Ct = cfs.get(i);
-            double onePlusRtoTheT = Math.pow((1.0 + r),(double) i-1);
+            double onePlusRtoTheT = Math.pow((1.0 + r),(double) i);
             result += (Ct / onePlusRtoTheT);
         }
         return result;
@@ -82,10 +82,11 @@ public class NPVCalculator implements Initializable,  UIChangedObserver {
                 FlowPane fp = new FlowPane(l);
                 Button b = new Button("X");
                 fp.getChildren().add(b);
-                cashFlowsMap.put(fp,cashFlow);
+                cashFlows.add(cashFlow);
+
                 b.setOnAction(ev ->{
                     LV_CASH_FLOWS.getItems().remove(fp);
-                    cashFlowsMap.remove(fp);
+                    cashFlows.remove(cashFlow);
                     evaluate();
                 });
                 LV_CASH_FLOWS.getItems().add(fp);
