@@ -78,7 +78,7 @@ public class UCKIT extends Application {
         });
         primaryStage.setScene(s);
         primaryStage.setHeight(700);
-        primaryStage.setWidth(900);
+        primaryStage.setWidth(1100);
         primaryStage.setResizable(true);
         primaryStage.setOnCloseRequest(e -> exitProgram());
         primaryStage.show();

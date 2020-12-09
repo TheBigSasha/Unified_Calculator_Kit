@@ -1,5 +1,14 @@
 [
   {
+    "Name": "EFFECTIVEINTERESTRATE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "EFFECTIVEINTERESTRATE"
+    },
+    "Description": "EIR, it is the interest rate which computs once per a standard period of time.",
+    "Steps": []
+  },
+  {
     "Name": "TOTALDEBT",
     "Symbol": {
       "fAttributes": 0,
@@ -27,12 +36,48 @@
     "Steps": []
   },
   {
-    "Name": "TOTALEQUITY",
+    "Name": "PERIODSOFINTEREST",
     "Symbol": {
       "fAttributes": 0,
-      "fSymbolName": "TOTALEQUITY"
+      "fSymbolName": "PERIODSOFINTEREST"
     },
     "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "BVPS",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "BVPS"
+    },
+    "Description": "Book value per share, also known as CVPS (Carrying value per share)",
+    "Steps": []
+  },
+  {
+    "Name": "EPS",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "EPS"
+    },
+    "Description": "How much of the net earnings are available to shareholders",
+    "Steps": []
+  },
+  {
+    "Name": "PBRATIO",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "PBRATIO"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "NUMBEROFSHARES",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "NUMBEROFSHARES"
+    },
+    "Description": "How many shares there are",
     "Steps": []
   },
   {
@@ -45,6 +90,159 @@
     "Steps": []
   },
   {
+    "Name": "FUTUREVALUE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "FUTUREVALUE"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "DELTAPRICEDEMAND",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "DELTAPRICEDEMAND"
+    },
+    "Description": "Used in elasticity calculation",
+    "Steps": []
+  },
+  {
+    "Name": "ASSETCOST",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "ASSETCOST"
+    },
+    "Description": "Cost of a depreciating asset",
+    "Steps": []
+  },
+  {
+    "Name": "ANNUITY",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "ANNUITY"
+    },
+    "Description": "What is charged every year for paying a debt given a number of years and interest",
+    "Steps": []
+  },
+  {
+    "Name": "ANNUITYDUE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "ANNUITYDUE"
+    },
+    "Description": "Present value of annuity due",
+    "Steps": []
+  },
+  {
+    "Name": "DELTAQUANTITYDEMAND",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "DELTAQUANTITYDEMAND"
+    },
+    "Description": "Used in elasticity calculation",
+    "Steps": []
+  },
+  {
+    "Name": "DEMANDELASTICITY",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "DEMANDELASTICITY"
+    },
+    "Description": "Price elasticity is used by economists to understand how supply or demand changes given changes in price to understand the workings of the real economy. For instance, some goods are very inelastic, that is, their prices do not change very much given changes in supply or demand, for example people need to buy gasoline to get to work or travel around the world, and so if oil prices rise, people will likely still buy just the same amount of gas. On the other hand, certain goods are very elastic, their price moves cause substantial changes in its demand or its supply. (Arc elasticity is the elasticity of one variable with respect to another between two given points.) Here, we will look just at how the demand side of the equation is impacted by fluctuations in price by considering the price elasticity of demand – which you can contrast with price elasticity of supply.",
+    "Steps": []
+  },
+  {
+    "Name": "TOTALEQUITY",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "TOTALEQUITY"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "LIFEOFASSET",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "LIFEOFASSET"
+    },
+    "Description": "How many years a depreciating asset is useful for",
+    "Steps": []
+  },
+  {
+    "Name": "EAC",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "EAC"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "PREFERREDEQUITY",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "PREFERREDEQUITY"
+    },
+    "Description": "Used in calculation of BVPS. ",
+    "Steps": []
+  },
+  {
+    "Name": "COSTEQUITY",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "COSTEQUITY"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "ANNUALINTERESTRATE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "ANNUALINTERESTRATE"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "TOTALSHARESOUTSTANDING",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "TOTALSHARESOUTSTANDING"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "PMT",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "PMT"
+    },
+    "Description": "period cash payment",
+    "Steps": []
+  },
+  {
+    "Name": "DEPRECEXPENSE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "DEPRECEXPENSE"
+    },
+    "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
+    "Steps": []
+  },
+  {
+    "Name": "SLDEPRECRATE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "SLDEPRECRATE"
+    },
+    "Description": "Straight line depreciation rate, does not factor in cash flows.",
+    "Steps": []
+  },
+  {
     "Name": "COSTDEBT",
     "Symbol": {
       "fAttributes": 0,
@@ -54,10 +252,19 @@
     "Steps": []
   },
   {
-    "Name": "COSTEQUITY",
+    "Name": "SHAREMARKETPRICE",
     "Symbol": {
       "fAttributes": 0,
-      "fSymbolName": "COSTEQUITY"
+      "fSymbolName": "SHAREMARKETPRICE"
+    },
+    "Description": "price of a share on the stock market",
+    "Steps": []
+  },
+  {
+    "Name": "SALVAGEVALUE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "SALVAGEVALUE"
     },
     "Description": "",
     "Steps": []

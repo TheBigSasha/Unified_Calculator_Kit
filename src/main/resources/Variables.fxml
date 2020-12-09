@@ -6,19 +6,21 @@
 
 <BorderPane fx:id="hostPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Uckit.view.VariablesController">
     <left>
-        <JFXListView fx:id="unsolvedVariables" prefWidth="450" />
+        <JFXListView fx:id="unsolvedVariables" prefWidth="550" />
     </left>
     <right>
-        <JFXListView fx:id="solvedVariables" prefWidth="450" />
+        <JFXListView fx:id="solvedVariables" prefWidth="550" />
     </right>
+    <center>
+    </center>
     <bottom>
         <FlowPane>
             <Button fx:id="solve" onAction="#solve" text="Solve" />
             <Button fx:id="reset" onAction="#reset" text="Reset" />
-            <TextField fx:id="newVarName"/>
+            <TextField fx:id="newVarName" prefWidth="400"/>
             <Button fx:id="add" onAction="#addVariable" text="Add"/>
             <Label text="description"/>
-            <TextField fx:id="description"/>
+            <TextField fx:id="description" prefWidth="400"/>
         </FlowPane>
     </bottom>
 
