@@ -232,6 +232,23 @@ public class CASRecursiveSolver implements VariableComputedObserver{
         new Equation(equation,out,inputVars);
     }
 
+    public static void addEquation(boolean solveMore, String equation, String outputVariableName, String... inputVariableNames){
+        Variable out = Variable.get(outputVariableName);
+        if(out == null) out = new Variable(outputVariableName);
+
+        Variable[] inputVars = new Variable[inputVariableNames.length];
+        for (int i = 0, inputVariableNamesLength = inputVariableNames.length; i < inputVariableNamesLength; i++) {
+            if(Variable.has(inputVariableNames[i])) {
+                inputVars[i] = Variable.get(inputVariableNames[i]);
+            }else{
+                Variable v = new Variable(inputVariableNames[i]);
+                inputVars[i] = v;
+            }
+        }
+        new Equation(equation,out,inputVars);
+    }
+
+
     public static void setVariable(String name, Double value){
         if(Variable.has(name)){
             Variable v = Variable.get(name);

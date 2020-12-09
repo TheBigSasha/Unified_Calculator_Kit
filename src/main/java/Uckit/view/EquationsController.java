@@ -5,6 +5,7 @@ import Uckit.model.CASRecursiveSolver;
 import Uckit.model.Equation;
 import Uckit.model.Variable;
 import com.jfoenix.controls.JFXListView;
+import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,6 +29,7 @@ public class EquationsController implements Initializable,UIChangedObserver {
     public CheckComboBox<String> inputVars;
     public ComboBox<String> returnVar;
     public TextField equationBox;
+    public JFXRadioButton RADIO_AUTOREARRANGE;
 
     /**
      * @param event
@@ -137,7 +139,11 @@ public class EquationsController implements Initializable,UIChangedObserver {
                     inputVars.add(item);
                 }
             });
-            CASRecursiveSolver.addEquation(equationBox.getText(), returnVar.getValue(), inputVars.toArray(new String[0]));
+            if(!RADIO_AUTOREARRANGE.selectedProperty().get()) {
+                CASRecursiveSolver.addEquation(equationBox.getText(), returnVar.getValue(), inputVars.toArray(new String[0]));
+            }else{
+                CASRecursiveSolver.addEquation(RADIO_AUTOREARRANGE.selectedProperty().get(), equationBox.getText(), returnVar.getValue(), inputVars.toArray(new String[0]));
+            }
             notifyOthers(new UIEvent(ChangeArea.CALCULATION));
             solve(actionEvent);
         }catch(Exception e){

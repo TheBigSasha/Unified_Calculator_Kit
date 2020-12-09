@@ -30,6 +30,7 @@
                <CheckComboBox fx:id="inputVars"/>
            </VBox>
            <Button mnemonicParsing="false" onAction="#addEquation" text="Add"/>
+           <JFXRadioButton text="Auto Rearrange" fx:id="RADIO_AUTOREARRANGE"/>
        </FlowPane>
    </bottom>
 
