@@ -83,7 +83,7 @@ public class Equation implements VariableComputedObserver{
         for(Variable v : members){
             v.addIncludedIn(this);
             if(!v.hasValue()) {
-                String derEq = evaluator.eval("solve(" + equationString + "," + v.getName() + ")").toScript().replace("->","==").replace("{","").replace("}","");
+                String derEq = evaluator.eval(equationString).toScript().replace("->","==").replace("{","").replace("}","");
                 Variable[] vars = new Variable[members.length];
                 for (int i = 0; i < members.length; i++) {
                     if(members[i].equals(v)){

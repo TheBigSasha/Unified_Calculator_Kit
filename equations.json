@@ -1,38 +1,5 @@
 [
   {
-    "EquationString": "DELTAPRICEDEMAND\u003d\u003dDELTAQUANTITYDEMAND/DEMANDELASTICITY",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "DELTAPRICEDEMAND",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "DELTAPRICEDEMAND"
-      },
-      "Description": "Used in elasticity calculation",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "DEMANDELASTICITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DEMANDELASTICITY"
-        },
-        "Description": "Price elasticity is used by economists to understand how supply or demand changes given changes in price to understand the workings of the real economy. For instance, some goods are very inelastic, that is, their prices do not change very much given changes in supply or demand, for example people need to buy gasoline to get to work or travel around the world, and so if oil prices rise, people will likely still buy just the same amount of gas. On the other hand, certain goods are very elastic, their price moves cause substantial changes in its demand or its supply. (Arc elasticity is the elasticity of one variable with respect to another between two given points.) Here, we will look just at how the demand side of the equation is impacted by fluctuations in price by considering the price elasticity of demand – which you can contrast with price elasticity of supply.",
-        "Steps": []
-      },
-      {
-        "Name": "DELTAQUANTITYDEMAND",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DELTAQUANTITYDEMAND"
-        },
-        "Description": "Used in elasticity calculation",
-        "Steps": []
-      }
-    ]
-  },
-  {
     "EquationString": "ASSETCOST\u003d\u003d(DEPRECEXPENSE+SALVAGEVALUE*SLDEPRECRATE)/SLDEPRECRATE",
     "Solved": false,
     "ReturnVariable": {
@@ -280,39 +247,6 @@
           "fSymbolName": "CORPTAXRATE"
         },
         "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "DEMANDELASTICITY \u003d\u003d DELTAQUANTITYDEMAND / DELTAPRICEDEMAND",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "DEMANDELASTICITY",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "DEMANDELASTICITY"
-      },
-      "Description": "Price elasticity is used by economists to understand how supply or demand changes given changes in price to understand the workings of the real economy. For instance, some goods are very inelastic, that is, their prices do not change very much given changes in supply or demand, for example people need to buy gasoline to get to work or travel around the world, and so if oil prices rise, people will likely still buy just the same amount of gas. On the other hand, certain goods are very elastic, their price moves cause substantial changes in its demand or its supply. (Arc elasticity is the elasticity of one variable with respect to another between two given points.) Here, we will look just at how the demand side of the equation is impacted by fluctuations in price by considering the price elasticity of demand – which you can contrast with price elasticity of supply.",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "DELTAPRICEDEMAND",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DELTAPRICEDEMAND"
-        },
-        "Description": "Used in elasticity calculation",
-        "Steps": []
-      },
-      {
-        "Name": "DELTAQUANTITYDEMAND",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DELTAQUANTITYDEMAND"
-        },
-        "Description": "Used in elasticity calculation",
         "Steps": []
       }
     ]
@@ -589,39 +523,6 @@
           "fSymbolName": "SALVAGEVALUE"
         },
         "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "DELTAQUANTITYDEMAND\u003d\u003dDELTAPRICEDEMAND*DEMANDELASTICITY",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "DELTAQUANTITYDEMAND",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "DELTAQUANTITYDEMAND"
-      },
-      "Description": "Used in elasticity calculation",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "DELTAPRICEDEMAND",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DELTAPRICEDEMAND"
-        },
-        "Description": "Used in elasticity calculation",
-        "Steps": []
-      },
-      {
-        "Name": "DEMANDELASTICITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DEMANDELASTICITY"
-        },
-        "Description": "Price elasticity is used by economists to understand how supply or demand changes given changes in price to understand the workings of the real economy. For instance, some goods are very inelastic, that is, their prices do not change very much given changes in supply or demand, for example people need to buy gasoline to get to work or travel around the world, and so if oil prices rise, people will likely still buy just the same amount of gas. On the other hand, certain goods are very elastic, their price moves cause substantial changes in its demand or its supply. (Arc elasticity is the elasticity of one variable with respect to another between two given points.) Here, we will look just at how the demand side of the equation is impacted by fluctuations in price by considering the price elasticity of demand – which you can contrast with price elasticity of supply.",
         "Steps": []
       }
     ]
@@ -985,6 +886,39 @@
           "fSymbolName": "PREFERREDEQUITY"
         },
         "Description": "Used in calculation of BVPS. ",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "DELTAQUANTITYDEMAND\u003d\u003dDELTAPRICEDEMAND*DEMANDELASTICITY",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "DELTAQUANTITYDEMAND",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "DELTAQUANTITYDEMAND"
+      },
+      "Description": "Used in elasticity calculation",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "DELTAPRICEDEMAND",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DELTAPRICEDEMAND"
+        },
+        "Description": "Used in elasticity calculation",
+        "Steps": []
+      },
+      {
+        "Name": "DEMANDELASTICITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DEMANDELASTICITY"
+        },
+        "Description": "Price elasticity is used by economists to understand how \n supply or demand changes given changes in price to understand the workings of the real economy.\n For instance, some goods are very inelastic, that is, their prices do not \nchange very much given changes in supply or demand, for example people\n need to buy gasoline to get to work or travel around the world, and so\n if oil prices rise, people will likely still buy just the same amount of\n gas. On the other hand, certain goods are very elastic, their price \nmoves cause substantial changes in its demand or its supply. (Arc elasticity \nis the elasticity of one variable with respect to another between \ntwo given points.) Here, we will look just at how the demand side of the \nequation is impacted by fluctuations in price by considering \nthe price elasticity of demand ï¿½ which you can contrast with price\n elasticity of supply.",
         "Steps": []
       }
     ]
@@ -1771,6 +1705,72 @@
           "fSymbolName": "SALVAGEVALUE"
         },
         "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "DELTAPRICEDEMAND\u003d\u003dDELTAQUANTITYDEMAND/DEMANDELASTICITY",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "DELTAPRICEDEMAND",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "DELTAPRICEDEMAND"
+      },
+      "Description": "Used in elasticity calculation",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "DEMANDELASTICITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DEMANDELASTICITY"
+        },
+        "Description": "Price elasticity is used by economists to understand how \n supply or demand changes given changes in price to understand the workings of the real economy.\n For instance, some goods are very inelastic, that is, their prices do not \nchange very much given changes in supply or demand, for example people\n need to buy gasoline to get to work or travel around the world, and so\n if oil prices rise, people will likely still buy just the same amount of\n gas. On the other hand, certain goods are very elastic, their price \nmoves cause substantial changes in its demand or its supply. (Arc elasticity \nis the elasticity of one variable with respect to another between \ntwo given points.) Here, we will look just at how the demand side of the \nequation is impacted by fluctuations in price by considering \nthe price elasticity of demand ï¿½ which you can contrast with price\n elasticity of supply.",
+        "Steps": []
+      },
+      {
+        "Name": "DELTAQUANTITYDEMAND",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DELTAQUANTITYDEMAND"
+        },
+        "Description": "Used in elasticity calculation",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "DEMANDELASTICITY \u003d\u003d DELTAQUANTITYDEMAND / DELTAPRICEDEMAND",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "DEMANDELASTICITY",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "DEMANDELASTICITY"
+      },
+      "Description": "Price elasticity is used by economists to understand how \n supply or demand changes given changes in price to understand the workings of the real economy.\n For instance, some goods are very inelastic, that is, their prices do not \nchange very much given changes in supply or demand, for example people\n need to buy gasoline to get to work or travel around the world, and so\n if oil prices rise, people will likely still buy just the same amount of\n gas. On the other hand, certain goods are very elastic, their price \nmoves cause substantial changes in its demand or its supply. (Arc elasticity \nis the elasticity of one variable with respect to another between \ntwo given points.) Here, we will look just at how the demand side of the \nequation is impacted by fluctuations in price by considering \nthe price elasticity of demand ï¿½ which you can contrast with price\n elasticity of supply.",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "DELTAPRICEDEMAND",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DELTAPRICEDEMAND"
+        },
+        "Description": "Used in elasticity calculation",
+        "Steps": []
+      },
+      {
+        "Name": "DELTAQUANTITYDEMAND",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DELTAQUANTITYDEMAND"
+        },
+        "Description": "Used in elasticity calculation",
         "Steps": []
       }
     ]
