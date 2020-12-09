@@ -102,6 +102,9 @@ public class Variable implements VariableComputedObserver {
     }
 
     private void setValue(Double value) {
+        if(value.equals("NaN") || value == null || value.isNaN() || value.isInfinite()){
+            return;
+        }
         this.value = value;
         getSymbol().assignValue(evaluator.eval(value.toString()));
         evaluator.eval(getExprString());

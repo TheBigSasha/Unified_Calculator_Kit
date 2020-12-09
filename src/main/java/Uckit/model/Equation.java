@@ -128,16 +128,22 @@ public class Equation implements VariableComputedObserver{
             }
             //double result = evaluator.eval("N(" + exprStr +")").evalDouble();
             //double result = evaluator.evalf("solve("+equationString+","+returnType.getName()+")");
-            double result;
+            Double result;
             try {
                 //result = Double.parseDouble(evaluator.eval("Solve(" + equationString + "," + returnType.getName() + ")").toString().replace("{{" + returnType.getName() + "->", "").replace("}}", ""));
                 result = evaluator.eval("N(" + equationString +")").evalDouble();
             } catch (Exception e) {
                 result = evaluator.evalf(equationString.replace("==", "="));
             }
+            if(result.isNaN()){
+                System.out.println("NaN result for " + equationString + "trying to solve");
+                isSolved = true;
+                return;
+            }
             List<Step> steps = new ArrayList<>();
             Arrays.asList(members).forEach(e -> steps.addAll((e.getSteps())));
             steps.add(new Step(this, returnType));
+            System.out.println(equationString + " " + result);
             returnType.evaluate(result, steps.toArray(new Step[0]));
             isSolved = true;
         }

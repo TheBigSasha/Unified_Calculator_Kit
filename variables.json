@@ -81,6 +81,15 @@
     "Steps": []
   },
   {
+    "Name": "YTM",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "YTM"
+    },
+    "Description": "Yield to maturity of a bond",
+    "Steps": []
+  },
+  {
     "Name": "NPV",
     "Symbol": {
       "fAttributes": 0,
@@ -105,6 +114,15 @@
       "fSymbolName": "DELTAPRICEDEMAND"
     },
     "Description": "Used in elasticity calculation",
+    "Steps": []
+  },
+  {
+    "Name": "BONDPRICE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "BONDPRICE"
+    },
+    "Description": "",
     "Steps": []
   },
   {
@@ -144,6 +162,15 @@
     "Steps": []
   },
   {
+    "Name": "COUPONPAYMENT",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "COUPONPAYMENT"
+    },
+    "Description": "Coupon/Interest payment of a bond",
+    "Steps": []
+  },
+  {
     "Name": "DEMANDELASTICITY",
     "Symbol": {
       "fAttributes": 0,
@@ -180,12 +207,30 @@
     "Steps": []
   },
   {
+    "Name": "FACEVALUE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "FACEVALUE"
+    },
+    "Description": "Face value of a bond",
+    "Steps": []
+  },
+  {
     "Name": "PREFERREDEQUITY",
     "Symbol": {
       "fAttributes": 0,
       "fSymbolName": "PREFERREDEQUITY"
     },
     "Description": "Used in calculation of BVPS. ",
+    "Steps": []
+  },
+  {
+    "Name": "YEARSTM",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "YEARSTM"
+    },
+    "Description": "",
     "Steps": []
   },
   {

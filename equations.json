@@ -351,6 +351,57 @@
     ]
   },
   {
+    "EquationString": "YTM \u003d\u003d (COUPONPAYMENT + ( (FACEVALUE - BONDPRICE) / YEARSTM))/((FACEVALUE + BONDPRICE)/2)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "YTM",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "YTM"
+      },
+      "Description": "Yield to maturity of a bond",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "FACEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FACEVALUE"
+        },
+        "Description": "Face value of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "BONDPRICE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BONDPRICE"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "YEARSTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YEARSTM"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "COUPONPAYMENT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COUPONPAYMENT"
+        },
+        "Description": "Coupon/Interest payment of a bond",
+        "Steps": []
+      }
+    ]
+  },
+  {
     "EquationString": "EFFECTIVEINTERESTRATE \u003d\u003d (1 + PERIODSOFINTEREST/ANNUALINTERESTRATE)^PERIODSOFINTEREST - 1",
     "Solved": false,
     "ReturnVariable": {
@@ -576,6 +627,57 @@
     ]
   },
   {
+    "EquationString": "BONDPRICE\u003d\u003d(2*FACEVALUE+2*COUPONPAYMENT*YEARSTM-FACEVALUE*YEARSTM*YTM)/(2+YEARSTM*YTM)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "BONDPRICE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "BONDPRICE"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "FACEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FACEVALUE"
+        },
+        "Description": "Face value of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "YTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YTM"
+        },
+        "Description": "Yield to maturity of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "YEARSTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YEARSTM"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "COUPONPAYMENT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COUPONPAYMENT"
+        },
+        "Description": "Coupon/Interest payment of a bond",
+        "Steps": []
+      }
+    ]
+  },
+  {
     "EquationString": "NPV \u003d\u003d (PMT * ((1 - (1 + ANNUALINTERESTRATE)^(-1 * PERIODSOFINTEREST) / ANNUALINTERESTRATE)))",
     "Solved": false,
     "ReturnVariable": {
@@ -748,6 +850,57 @@
           "fSymbolName": "ANNUALINTERESTRATE"
         },
         "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "FACEVALUE\u003d\u003d-(2*BONDPRICE-2*COUPONPAYMENT*YEARSTM+BONDPRICE*YEARSTM*YTM)/(-2+YEARSTM*YTM)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "FACEVALUE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "FACEVALUE"
+      },
+      "Description": "Face value of a bond",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "YTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YTM"
+        },
+        "Description": "Yield to maturity of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "BONDPRICE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BONDPRICE"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "YEARSTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YEARSTM"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "COUPONPAYMENT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COUPONPAYMENT"
+        },
+        "Description": "Coupon/Interest payment of a bond",
         "Steps": []
       }
     ]
@@ -1200,6 +1353,57 @@
     ]
   },
   {
+    "EquationString": "YEARSTM\u003d\u003d(-2*BONDPRICE+2*FACEVALUE)/(-2*COUPONPAYMENT+BONDPRICE*YTM+FACEVALUE*YTM)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "YEARSTM",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "YEARSTM"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "FACEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FACEVALUE"
+        },
+        "Description": "Face value of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "BONDPRICE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BONDPRICE"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "YTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YTM"
+        },
+        "Description": "Yield to maturity of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "COUPONPAYMENT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COUPONPAYMENT"
+        },
+        "Description": "Coupon/Interest payment of a bond",
+        "Steps": []
+      }
+    ]
+  },
+  {
     "EquationString": "TOTALEQUITY\u003d\u003dEPS*NUMBEROFSHARES",
     "Solved": false,
     "ReturnVariable": {
@@ -1474,6 +1678,57 @@
           "fSymbolName": "NPV"
         },
         "Description": "Net present value, one way calculation",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "COUPONPAYMENT\u003d\u003d(2*BONDPRICE-2*FACEVALUE+BONDPRICE*YEARSTM*YTM+FACEVALUE*YEARSTM*YTM)/(\n2*YEARSTM)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "COUPONPAYMENT",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "COUPONPAYMENT"
+      },
+      "Description": "Coupon/Interest payment of a bond",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "FACEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FACEVALUE"
+        },
+        "Description": "Face value of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "BONDPRICE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BONDPRICE"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "YEARSTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YEARSTM"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "YTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YTM"
+        },
+        "Description": "Yield to maturity of a bond",
         "Steps": []
       }
     ]
