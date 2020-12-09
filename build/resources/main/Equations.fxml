@@ -18,7 +18,10 @@
    <bottom>
        <FlowPane alignment="BASELINE_CENTER" prefHeight="56.0" minWidth="310" prefWidth="600.0" BorderPane.alignment="CENTER">
            <VBox prefHeight="46.0" prefWidth="700.0">
-               <Label text="Equation"/>
+               <HBox spacing="40">
+                   <Label text="Equation"/>
+                   <JFXRadioButton text="Auto Rearrange" fx:id="RADIO_AUTOREARRANGE"/>
+               </HBox>
                <TextField fx:id="equationBox" prefWidth="700.0"/>
            </VBox>
            <VBox prefHeight="46.0" prefWidth="140.0">
@@ -30,7 +33,7 @@
                <CheckComboBox fx:id="inputVars"/>
            </VBox>
            <Button mnemonicParsing="false" onAction="#addEquation" text="Add"/>
-           <JFXRadioButton text="Auto Rearrange" fx:id="RADIO_AUTOREARRANGE"/>
+
        </FlowPane>
    </bottom>
 
