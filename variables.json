@@ -18,6 +18,15 @@
     "Steps": []
   },
   {
+    "Name": "CASHDIVID",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "CASHDIVID"
+    },
+    "Description": "Cash Dividends",
+    "Steps": []
+  },
+  {
     "Name": "CORPTAXRATE",
     "Symbol": {
       "fAttributes": 0,
@@ -51,6 +60,15 @@
       "fSymbolName": "BVPS"
     },
     "Description": "Book value per share, also known as CVPS (Carrying value per share)",
+    "Steps": []
+  },
+  {
+    "Name": "STOCKDIVID",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "STOCKDIVID"
+    },
+    "Description": "Stock Dividends",
     "Steps": []
   },
   {
@@ -108,6 +126,15 @@
     "Steps": []
   },
   {
+    "Name": "PAYOUTRATIO",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "PAYOUTRATIO"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
     "Name": "DELTAPRICEDEMAND",
     "Symbol": {
       "fAttributes": 0,
@@ -150,6 +177,15 @@
       "fSymbolName": "ANNUITYDUE"
     },
     "Description": "Present value of annuity due",
+    "Steps": []
+  },
+  {
+    "Name": "CCA",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "CCA"
+    },
+    "Description": "Canadian tax thing",
     "Steps": []
   },
   {
@@ -216,6 +252,15 @@
     "Steps": []
   },
   {
+    "Name": "BEGINNINGRE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "BEGINNINGRE"
+    },
+    "Description": "Beginning of Period Retained Earnings",
+    "Steps": []
+  },
+  {
     "Name": "PREFERREDEQUITY",
     "Symbol": {
       "fAttributes": 0,
@@ -256,6 +301,33 @@
     "Symbol": {
       "fAttributes": 0,
       "fSymbolName": "TOTALSHARESOUTSTANDING"
+    },
+    "Description": "",
+    "Steps": []
+  },
+  {
+    "Name": "RE",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "RE"
+    },
+    "Description": "Retained Earnings",
+    "Steps": []
+  },
+  {
+    "Name": "NUMBONDS",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "NUMBONDS"
+    },
+    "Description": "The number of bonds held",
+    "Steps": []
+  },
+  {
+    "Name": "NETINCOME",
+    "Symbol": {
+      "fAttributes": 0,
+      "fSymbolName": "NETINCOME"
     },
     "Description": "",
     "Steps": []

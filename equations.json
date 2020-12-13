@@ -42,39 +42,6 @@
     ]
   },
   {
-    "EquationString": "ANNUALINTERESTRATE\u003d\u003dPERIODSOFINTEREST/(-1+(1+EFFECTIVEINTERESTRATE)^(1/PERIODSOFINTEREST))",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "ANNUALINTERESTRATE",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "ANNUALINTERESTRATE"
-      },
-      "Description": "",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "PERIODSOFINTEREST",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "PERIODSOFINTEREST"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "EFFECTIVEINTERESTRATE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "EFFECTIVEINTERESTRATE"
-        },
-        "Description": "EIR, it is the interest rate which computs once per a standard period of time.",
-        "Steps": []
-      }
-    ]
-  },
-  {
     "EquationString": "EPS \u003d\u003d TOTALEQUITY / NUMBEROFSHARES",
     "Solved": false,
     "ReturnVariable": {
@@ -150,41 +117,32 @@
     ]
   },
   {
-    "EquationString": "SLDEPRECRATE \u003d\u003d DEPRECEXPENSE / (ASSETCOST - SALVAGEVALUE)",
+    "EquationString": "PAYOUTRATIO \u003d\u003d STOCKDIVID / NETICOME",
     "Solved": false,
     "ReturnVariable": {
-      "Name": "SLDEPRECRATE",
+      "Name": "PAYOUTRATIO",
       "Symbol": {
         "fAttributes": 0,
-        "fSymbolName": "SLDEPRECRATE"
+        "fSymbolName": "PAYOUTRATIO"
       },
-      "Description": "Straight line depreciation rate, does not factor in cash flows.",
+      "Description": "",
       "Steps": []
     },
     "MemberVariables": [
       {
-        "Name": "ASSETCOST",
+        "Name": "STOCKDIVID",
         "Symbol": {
           "fAttributes": 0,
-          "fSymbolName": "ASSETCOST"
+          "fSymbolName": "STOCKDIVID"
         },
-        "Description": "Cost of a depreciating asset",
+        "Description": "Stock Dividends",
         "Steps": []
       },
       {
-        "Name": "DEPRECEXPENSE",
+        "Name": "NETINCOME",
         "Symbol": {
           "fAttributes": 0,
-          "fSymbolName": "DEPRECEXPENSE"
-        },
-        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
-        "Steps": []
-      },
-      {
-        "Name": "SALVAGEVALUE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "SALVAGEVALUE"
+          "fSymbolName": "NETINCOME"
         },
         "Description": "",
         "Steps": []
@@ -278,6 +236,711 @@
         "Symbol": {
           "fAttributes": 0,
           "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "DEPRECEXPENSE \u003d\u003d (ASSETCOST - SALVAGEVALUE) / LIFEOFASSET",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "DEPRECEXPENSE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "DEPRECEXPENSE"
+      },
+      "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "ASSETCOST",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "ASSETCOST"
+        },
+        "Description": "Cost of a depreciating asset",
+        "Steps": []
+      },
+      {
+        "Name": "LIFEOFASSET",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "LIFEOFASSET"
+        },
+        "Description": "How many years a depreciating asset is useful for",
+        "Steps": []
+      },
+      {
+        "Name": "SALVAGEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "SALVAGEVALUE"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "BVPS\u003d\u003dSHAREMARKETPRICE/PBRATIO",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "BVPS",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "BVPS"
+      },
+      "Description": "Book value per share, also known as CVPS (Carrying value per share)",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "PBRATIO",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "PBRATIO"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "SHAREMARKETPRICE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "SHAREMARKETPRICE"
+        },
+        "Description": "price of a share on the stock market",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "SALVAGEVALUE\u003d\u003dASSETCOST-DEPRECEXPENSE*LIFEOFASSET",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "SALVAGEVALUE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "SALVAGEVALUE"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "ASSETCOST",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "ASSETCOST"
+        },
+        "Description": "Cost of a depreciating asset",
+        "Steps": []
+      },
+      {
+        "Name": "LIFEOFASSET",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "LIFEOFASSET"
+        },
+        "Description": "How many years a depreciating asset is useful for",
+        "Steps": []
+      },
+      {
+        "Name": "DEPRECEXPENSE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DEPRECEXPENSE"
+        },
+        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "RE\u003d\u003dBEGINNINGRE-DIVIDEND+NETINCOME",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "BEGINNINGRE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "BEGINNINGRE"
+      },
+      "Description": "Beginning of Period Retained Earnings",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "RE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "RE"
+        },
+        "Description": "Retained Earnings",
+        "Steps": []
+      },
+      {
+        "Name": "STOCKDIVID",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "STOCKDIVID"
+        },
+        "Description": "Stock Dividends",
+        "Steps": []
+      },
+      {
+        "Name": "NETINCOME",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "NETINCOME"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "TOTALDEBT",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "TOTALDEBT"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "COSTDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTDEBT"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "COSTEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTEQUITY"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "WACC",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "WACC"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "CORPTAXRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "CORPTAXRATE"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "YEARSTM\u003d\u003d(-2*BONDPRICE+2*FACEVALUE)/(-2*COUPONPAYMENT+BONDPRICE*YTM+FACEVALUE*YTM)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "YEARSTM",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "YEARSTM"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "FACEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "FACEVALUE"
+        },
+        "Description": "Face value of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "BONDPRICE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BONDPRICE"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "YTM",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "YTM"
+        },
+        "Description": "Yield to maturity of a bond",
+        "Steps": []
+      },
+      {
+        "Name": "COUPONPAYMENT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COUPONPAYMENT"
+        },
+        "Description": "Coupon/Interest payment of a bond",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "PAYOUTRATIO\u003d\u003dSTOCKDIVID/NETICOME",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "STOCKDIVID",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "STOCKDIVID"
+      },
+      "Description": "Stock Dividends",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "PAYOUTRATIO",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "PAYOUTRATIO"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "NETINCOME",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "NETINCOME"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "TOTALEQUITY\u003d\u003dEPS*NUMBEROFSHARES",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "TOTALEQUITY",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "TOTALEQUITY"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "NUMBEROFSHARES",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "NUMBEROFSHARES"
+        },
+        "Description": "How many shares there are",
+        "Steps": []
+      },
+      {
+        "Name": "EPS",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "EPS"
+        },
+        "Description": "How much of the net earnings are available to shareholders",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "BVPS \u003d\u003d (TOTALEQUITY - PREFERREDEQUITY) / TOTALSHARESOUTSTANDING",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "BVPS",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "BVPS"
+      },
+      "Description": "Book value per share, also known as CVPS (Carrying value per share)",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "TOTALSHARESOUTSTANDING",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALSHARESOUTSTANDING"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "PREFERREDEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "PREFERREDEQUITY"
+        },
+        "Description": "Used in calculation of BVPS. ",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "TOTALEQUITY",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "TOTALEQUITY"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "WACC",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "WACC"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "COSTDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTDEBT"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "COSTEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "COSTEQUITY"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "TOTALDEBT",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALDEBT"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "CORPTAXRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "CORPTAXRATE"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "PREFERREDEQUITY\u003d\u003dTOTALEQUITY-BVPS*TOTALSHARESOUTSTANDING",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "PREFERREDEQUITY",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "PREFERREDEQUITY"
+      },
+      "Description": "Used in calculation of BVPS. ",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "TOTALEQUITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALEQUITY"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "TOTALSHARESOUTSTANDING",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "TOTALSHARESOUTSTANDING"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "BVPS",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BVPS"
+        },
+        "Description": "Book value per share, also known as CVPS (Carrying value per share)",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "ASSETCOST\u003d\u003dDEPRECEXPENSE*LIFEOFASSET+SALVAGEVALUE",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "ASSETCOST",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "ASSETCOST"
+      },
+      "Description": "Cost of a depreciating asset",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "DEPRECEXPENSE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DEPRECEXPENSE"
+        },
+        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
+        "Steps": []
+      },
+      {
+        "Name": "LIFEOFASSET",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "LIFEOFASSET"
+        },
+        "Description": "How many years a depreciating asset is useful for",
+        "Steps": []
+      },
+      {
+        "Name": "SALVAGEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "SALVAGEVALUE"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "DELTAPRICEDEMAND\u003d\u003dDELTAQUANTITYDEMAND/DEMANDELASTICITY",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "DELTAPRICEDEMAND",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "DELTAPRICEDEMAND"
+      },
+      "Description": "Used in elasticity calculation",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "DEMANDELASTICITY",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DEMANDELASTICITY"
+        },
+        "Description": "Price elasticity is used by economists to understand how \n supply or demand changes given changes in price to understand the workings of the real economy.\n For instance, some goods are very inelastic, that is, their prices do not \nchange very much given changes in supply or demand, for example people\n need to buy gasoline to get to work or travel around the world, and so\n if oil prices rise, people will likely still buy just the same amount of\n gas. On the other hand, certain goods are very elastic, their price \nmoves cause substantial changes in its demand or its supply. (Arc elasticity \nis the elasticity of one variable with respect to another between \ntwo given points.) Here, we will look just at how the demand side of the \nequation is impacted by fluctuations in price by considering \nthe price elasticity of demand � which you can contrast with price\n elasticity of supply.",
+        "Steps": []
+      },
+      {
+        "Name": "DELTAQUANTITYDEMAND",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DELTAQUANTITYDEMAND"
+        },
+        "Description": "Used in elasticity calculation",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "SALVAGEVALUE\u003d\u003d(-DEPRECEXPENSE+ASSETCOST*SLDEPRECRATE)/SLDEPRECRATE",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "SALVAGEVALUE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "SALVAGEVALUE"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "ASSETCOST",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "ASSETCOST"
+        },
+        "Description": "Cost of a depreciating asset",
+        "Steps": []
+      },
+      {
+        "Name": "DEPRECEXPENSE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DEPRECEXPENSE"
+        },
+        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
+        "Steps": []
+      },
+      {
+        "Name": "SLDEPRECRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "SLDEPRECRATE"
+        },
+        "Description": "Straight line depreciation rate, does not factor in cash flows.",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "ANNUALINTERESTRATE\u003d\u003dPERIODSOFINTEREST/(-1+(1+EFFECTIVEINTERESTRATE)^(1/PERIODSOFINTEREST))",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "ANNUALINTERESTRATE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "ANNUALINTERESTRATE"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "PERIODSOFINTEREST",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "PERIODSOFINTEREST"
+        },
+        "Description": "",
+        "Steps": []
+      },
+      {
+        "Name": "EFFECTIVEINTERESTRATE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "EFFECTIVEINTERESTRATE"
+        },
+        "Description": "EIR, it is the interest rate which computs once per a standard period of time.",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "SLDEPRECRATE \u003d\u003d DEPRECEXPENSE / (ASSETCOST - SALVAGEVALUE)",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "SLDEPRECRATE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "SLDEPRECRATE"
+      },
+      "Description": "Straight line depreciation rate, does not factor in cash flows.",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "ASSETCOST",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "ASSETCOST"
+        },
+        "Description": "Cost of a depreciating asset",
+        "Steps": []
+      },
+      {
+        "Name": "DEPRECEXPENSE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "DEPRECEXPENSE"
+        },
+        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
+        "Steps": []
+      },
+      {
+        "Name": "SALVAGEVALUE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "SALVAGEVALUE"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "PAYOUTRATIO\u003d\u003dSTOCKDIVID/NETICOME",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "NETINCOME",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "NETINCOME"
+      },
+      "Description": "",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "STOCKDIVID",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "STOCKDIVID"
+        },
+        "Description": "Stock Dividends",
+        "Steps": []
+      },
+      {
+        "Name": "PAYOUTRATIO",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "PAYOUTRATIO"
         },
         "Description": "",
         "Steps": []
@@ -411,48 +1074,6 @@
     ]
   },
   {
-    "EquationString": "DEPRECEXPENSE \u003d\u003d (ASSETCOST - SALVAGEVALUE) / LIFEOFASSET",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "DEPRECEXPENSE",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "DEPRECEXPENSE"
-      },
-      "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "ASSETCOST",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "ASSETCOST"
-        },
-        "Description": "Cost of a depreciating asset",
-        "Steps": []
-      },
-      {
-        "Name": "LIFEOFASSET",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "LIFEOFASSET"
-        },
-        "Description": "How many years a depreciating asset is useful for",
-        "Steps": []
-      },
-      {
-        "Name": "SALVAGEVALUE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "SALVAGEVALUE"
-        },
-        "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
     "EquationString": "SHAREMARKETPRICE\u003d\u003dBVPS*PBRATIO",
     "Solved": false,
     "ReturnVariable": {
@@ -528,6 +1149,48 @@
     ]
   },
   {
+    "EquationString": "RE \u003d\u003d BEGINNINGRE + NETINCOME - DIVIDEND",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "RE",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "RE"
+      },
+      "Description": "Retained Earnings",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "BEGINNINGRE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BEGINNINGRE"
+        },
+        "Description": "Beginning of Period Retained Earnings",
+        "Steps": []
+      },
+      {
+        "Name": "STOCKDIVID",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "STOCKDIVID"
+        },
+        "Description": "Stock Dividends",
+        "Steps": []
+      },
+      {
+        "Name": "NETINCOME",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "NETINCOME"
+        },
+        "Description": "",
+        "Steps": []
+      }
+    ]
+  },
+  {
     "EquationString": "BONDPRICE\u003d\u003d(2*FACEVALUE+2*COUPONPAYMENT*YEARSTM-FACEVALUE*YEARSTM*YTM)/(2+YEARSTM*YTM)",
     "Solved": false,
     "ReturnVariable": {
@@ -574,6 +1237,48 @@
           "fSymbolName": "COUPONPAYMENT"
         },
         "Description": "Coupon/Interest payment of a bond",
+        "Steps": []
+      }
+    ]
+  },
+  {
+    "EquationString": "RE\u003d\u003dBEGINNINGRE-DIVIDEND+NETINCOME",
+    "Solved": false,
+    "ReturnVariable": {
+      "Name": "STOCKDIVID",
+      "Symbol": {
+        "fAttributes": 0,
+        "fSymbolName": "STOCKDIVID"
+      },
+      "Description": "Stock Dividends",
+      "Steps": []
+    },
+    "MemberVariables": [
+      {
+        "Name": "BEGINNINGRE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "BEGINNINGRE"
+        },
+        "Description": "Beginning of Period Retained Earnings",
+        "Steps": []
+      },
+      {
+        "Name": "RE",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "RE"
+        },
+        "Description": "Retained Earnings",
+        "Steps": []
+      },
+      {
+        "Name": "NETINCOME",
+        "Symbol": {
+          "fAttributes": 0,
+          "fSymbolName": "NETINCOME"
+        },
+        "Description": "",
         "Steps": []
       }
     ]
@@ -676,39 +1381,6 @@
           "fSymbolName": "CORPTAXRATE"
         },
         "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "BVPS\u003d\u003dSHAREMARKETPRICE/PBRATIO",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "BVPS",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "BVPS"
-      },
-      "Description": "Book value per share, also known as CVPS (Carrying value per share)",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "PBRATIO",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "PBRATIO"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "SHAREMARKETPRICE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "SHAREMARKETPRICE"
-        },
-        "Description": "price of a share on the stock market",
         "Steps": []
       }
     ]
@@ -966,48 +1638,6 @@
     ]
   },
   {
-    "EquationString": "SALVAGEVALUE\u003d\u003dASSETCOST-DEPRECEXPENSE*LIFEOFASSET",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "SALVAGEVALUE",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "SALVAGEVALUE"
-      },
-      "Description": "",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "ASSETCOST",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "ASSETCOST"
-        },
-        "Description": "Cost of a depreciating asset",
-        "Steps": []
-      },
-      {
-        "Name": "LIFEOFASSET",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "LIFEOFASSET"
-        },
-        "Description": "How many years a depreciating asset is useful for",
-        "Steps": []
-      },
-      {
-        "Name": "DEPRECEXPENSE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DEPRECEXPENSE"
-        },
-        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
-        "Steps": []
-      }
-    ]
-  },
-  {
     "EquationString": "CORPTAXRATE\u003d\u003d(COSTDEBT*TOTALDEBT+COSTEQUITY*TOTALEQUITY-TOTALDEBT*WACC-TOTALEQUITY*WACC)/(COSTDEBT*TOTALDEBT)",
     "Solved": false,
     "ReturnVariable": {
@@ -1227,150 +1857,6 @@
     ]
   },
   {
-    "EquationString": "TOTALDEBT\u003d\u003d(COSTEQUITY*TOTALEQUITY-TOTALEQUITY*WACC)/(-COSTDEBT+CORPTAXRATE*COSTDEBT+WACC)",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "TOTALDEBT",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "TOTALDEBT"
-      },
-      "Description": "",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "TOTALEQUITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "TOTALEQUITY"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "COSTDEBT",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "COSTDEBT"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "COSTEQUITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "COSTEQUITY"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "WACC",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "WACC"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "CORPTAXRATE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "CORPTAXRATE"
-        },
-        "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "YEARSTM\u003d\u003d(-2*BONDPRICE+2*FACEVALUE)/(-2*COUPONPAYMENT+BONDPRICE*YTM+FACEVALUE*YTM)",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "YEARSTM",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "YEARSTM"
-      },
-      "Description": "",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "FACEVALUE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "FACEVALUE"
-        },
-        "Description": "Face value of a bond",
-        "Steps": []
-      },
-      {
-        "Name": "BONDPRICE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "BONDPRICE"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "YTM",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "YTM"
-        },
-        "Description": "Yield to maturity of a bond",
-        "Steps": []
-      },
-      {
-        "Name": "COUPONPAYMENT",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "COUPONPAYMENT"
-        },
-        "Description": "Coupon/Interest payment of a bond",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "TOTALEQUITY\u003d\u003dEPS*NUMBEROFSHARES",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "TOTALEQUITY",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "TOTALEQUITY"
-      },
-      "Description": "",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "NUMBEROFSHARES",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "NUMBEROFSHARES"
-        },
-        "Description": "How many shares there are",
-        "Steps": []
-      },
-      {
-        "Name": "EPS",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "EPS"
-        },
-        "Description": "How much of the net earnings are available to shareholders",
-        "Steps": []
-      }
-    ]
-  },
-  {
     "EquationString": "COSTDEBT\u003d\u003d-(-COSTEQUITY*TOTALEQUITY+TOTALDEBT*WACC+TOTALEQUITY*WACC)/(-TOTALDEBT+CORPTAXRATE*TOTALDEBT)",
     "Solved": false,
     "ReturnVariable": {
@@ -1426,150 +1912,6 @@
           "fSymbolName": "CORPTAXRATE"
         },
         "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "BVPS \u003d\u003d (TOTALEQUITY - PREFERREDEQUITY) / TOTALSHARESOUTSTANDING",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "BVPS",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "BVPS"
-      },
-      "Description": "Book value per share, also known as CVPS (Carrying value per share)",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "TOTALEQUITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "TOTALEQUITY"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "TOTALSHARESOUTSTANDING",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "TOTALSHARESOUTSTANDING"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "PREFERREDEQUITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "PREFERREDEQUITY"
-        },
-        "Description": "Used in calculation of BVPS. ",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "TOTALEQUITY\u003d\u003d-(-COSTDEBT*TOTALDEBT+CORPTAXRATE*COSTDEBT*TOTALDEBT+TOTALDEBT*WACC)/(-COSTEQUITY+WACC)",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "TOTALEQUITY",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "TOTALEQUITY"
-      },
-      "Description": "",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "WACC",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "WACC"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "COSTDEBT",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "COSTDEBT"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "COSTEQUITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "COSTEQUITY"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "TOTALDEBT",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "TOTALDEBT"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "CORPTAXRATE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "CORPTAXRATE"
-        },
-        "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "PREFERREDEQUITY\u003d\u003dTOTALEQUITY-BVPS*TOTALSHARESOUTSTANDING",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "PREFERREDEQUITY",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "PREFERREDEQUITY"
-      },
-      "Description": "Used in calculation of BVPS. ",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "TOTALEQUITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "TOTALEQUITY"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "TOTALSHARESOUTSTANDING",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "TOTALSHARESOUTSTANDING"
-        },
-        "Description": "",
-        "Steps": []
-      },
-      {
-        "Name": "BVPS",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "BVPS"
-        },
-        "Description": "Book value per share, also known as CVPS (Carrying value per share)",
         "Steps": []
       }
     ]
@@ -1668,81 +2010,6 @@
     ]
   },
   {
-    "EquationString": "ASSETCOST\u003d\u003dDEPRECEXPENSE*LIFEOFASSET+SALVAGEVALUE",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "ASSETCOST",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "ASSETCOST"
-      },
-      "Description": "Cost of a depreciating asset",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "DEPRECEXPENSE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DEPRECEXPENSE"
-        },
-        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
-        "Steps": []
-      },
-      {
-        "Name": "LIFEOFASSET",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "LIFEOFASSET"
-        },
-        "Description": "How many years a depreciating asset is useful for",
-        "Steps": []
-      },
-      {
-        "Name": "SALVAGEVALUE",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "SALVAGEVALUE"
-        },
-        "Description": "",
-        "Steps": []
-      }
-    ]
-  },
-  {
-    "EquationString": "DELTAPRICEDEMAND\u003d\u003dDELTAQUANTITYDEMAND/DEMANDELASTICITY",
-    "Solved": false,
-    "ReturnVariable": {
-      "Name": "DELTAPRICEDEMAND",
-      "Symbol": {
-        "fAttributes": 0,
-        "fSymbolName": "DELTAPRICEDEMAND"
-      },
-      "Description": "Used in elasticity calculation",
-      "Steps": []
-    },
-    "MemberVariables": [
-      {
-        "Name": "DEMANDELASTICITY",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DEMANDELASTICITY"
-        },
-        "Description": "Price elasticity is used by economists to understand how \n supply or demand changes given changes in price to understand the workings of the real economy.\n For instance, some goods are very inelastic, that is, their prices do not \nchange very much given changes in supply or demand, for example people\n need to buy gasoline to get to work or travel around the world, and so\n if oil prices rise, people will likely still buy just the same amount of\n gas. On the other hand, certain goods are very elastic, their price \nmoves cause substantial changes in its demand or its supply. (Arc elasticity \nis the elasticity of one variable with respect to another between \ntwo given points.) Here, we will look just at how the demand side of the \nequation is impacted by fluctuations in price by considering \nthe price elasticity of demand � which you can contrast with price\n elasticity of supply.",
-        "Steps": []
-      },
-      {
-        "Name": "DELTAQUANTITYDEMAND",
-        "Symbol": {
-          "fAttributes": 0,
-          "fSymbolName": "DELTAQUANTITYDEMAND"
-        },
-        "Description": "Used in elasticity calculation",
-        "Steps": []
-      }
-    ]
-  },
-  {
     "EquationString": "DEMANDELASTICITY \u003d\u003d DELTAQUANTITYDEMAND / DELTAPRICEDEMAND",
     "Solved": false,
     "ReturnVariable": {
@@ -1776,43 +2043,43 @@
     ]
   },
   {
-    "EquationString": "SALVAGEVALUE\u003d\u003d(-DEPRECEXPENSE+ASSETCOST*SLDEPRECRATE)/SLDEPRECRATE",
+    "EquationString": "RE\u003d\u003dBEGINNINGRE-DIVIDEND+NETINCOME",
     "Solved": false,
     "ReturnVariable": {
-      "Name": "SALVAGEVALUE",
+      "Name": "NETINCOME",
       "Symbol": {
         "fAttributes": 0,
-        "fSymbolName": "SALVAGEVALUE"
+        "fSymbolName": "NETINCOME"
       },
       "Description": "",
       "Steps": []
     },
     "MemberVariables": [
       {
-        "Name": "ASSETCOST",
+        "Name": "BEGINNINGRE",
         "Symbol": {
           "fAttributes": 0,
-          "fSymbolName": "ASSETCOST"
+          "fSymbolName": "BEGINNINGRE"
         },
-        "Description": "Cost of a depreciating asset",
+        "Description": "Beginning of Period Retained Earnings",
         "Steps": []
       },
       {
-        "Name": "DEPRECEXPENSE",
+        "Name": "STOCKDIVID",
         "Symbol": {
           "fAttributes": 0,
-          "fSymbolName": "DEPRECEXPENSE"
+          "fSymbolName": "STOCKDIVID"
         },
-        "Description": "Straight line depreciation expense taking into account only salvage value and cost of asset over useful life",
+        "Description": "Stock Dividends",
         "Steps": []
       },
       {
-        "Name": "SLDEPRECRATE",
+        "Name": "RE",
         "Symbol": {
           "fAttributes": 0,
-          "fSymbolName": "SLDEPRECRATE"
+          "fSymbolName": "RE"
         },
-        "Description": "Straight line depreciation rate, does not factor in cash flows.",
+        "Description": "Retained Earnings",
         "Steps": []
       }
     ]

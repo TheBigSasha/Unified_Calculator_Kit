@@ -1,37 +1,39 @@
-Uckit/view/Toast.java
- Uckit.view.Toast
 Uckit/view/ChangeArea.java
  Uckit.view.ChangeArea
+Uckit/view/Toast.java
+ Uckit.view.Toast
 Uckit/view/UIEvent.java
  Uckit.view.UIEvent
 Uckit/view/FXMLHost.java
  Uckit.view.FXMLHost
 Uckit/view/UIChangeManager.java
  Uckit.view.UIChangeManager
+Uckit/model/VariableComputedObserver.java
+ Uckit.model.VariableComputedObserver
+Uckit/view/NPVCalculator.java
+ Uckit.view.NPVCalculator
+Uckit/model/ObserverController.java
+ Uckit.model.ObserverController
+Uckit/view/UIChangedObserver.java
+ Uckit.view.UIChangedObserver
+Uckit/model/Step.java
+ Uckit.model.Step
+Uckit/model/VariableComputedEvent.java
+ Uckit.model.VariableComputedEvent
 Uckit/application/UCKIT.java
  Uckit.application.UCKIT
  Uckit.application.UCKIT$1
+Uckit/model/Equation.java
+ Uckit.model.Equation
+Uckit/view/VariablesController.java
+ Uckit.view.VariablesController
 Uckit/model/CASRecursiveSolver.java
  Uckit.model.CASRecursiveSolver
  Uckit.model.CASRecursiveSolver$1
  Uckit.model.CASRecursiveSolver$2
 Uckit/view/Settings.java
  Uckit.view.Settings
-Uckit/view/VariablesFXMLController.java
- Uckit.view.VariablesFXMLController
-Uckit/model/Step.java
- Uckit.model.Step
-Uckit/model/VariableComputedEvent.java
- Uckit.model.VariableComputedEvent
-Uckit/model/Equation.java
- Uckit.model.Equation
-Uckit/model/ObserverController.java
- Uckit.model.ObserverController
 Uckit/model/Variable.java
  Uckit.model.Variable
-Uckit/view/EquationsFXMLController.java
- Uckit.view.EquationsFXMLController
-Uckit/view/UIChangedObserver.java
- Uckit.view.UIChangedObserver
-Uckit/model/VariableComputedObserver.java
- Uckit.model.VariableComputedObserver
+Uckit/view/EquationsController.java
+ Uckit.view.EquationsController

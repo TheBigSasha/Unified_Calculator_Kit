@@ -67,7 +67,7 @@ public class UCKIT extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXMLHost.fxml"));
         Parent root = fxmlLoader.load();
-        primaryStage.setTitle("F.Uckit " + versionNumber + " - " + getGreeting());
+        primaryStage.setTitle("UCKit " + versionNumber + " - " + getGreeting());
         Scene s = new Scene(root);
         FXMLHost cont = fxmlLoader.getController();
         primaryStage.heightProperty().addListener(new ChangeListener<Number>() {

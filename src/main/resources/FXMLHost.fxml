@@ -7,7 +7,7 @@
    <top>
       <BorderPane fx:id="topBar" prefHeight="69.0" prefWidth="200.0" BorderPane.alignment="CENTER" styleClass="sunset">
           <center>
-              <Label text="F.Uckit" styleClass="title_top, force-white"/>
+              <Label text="UCKit" styleClass="title_top, force-white"/>
           </center>
       </BorderPane>
    </top>
