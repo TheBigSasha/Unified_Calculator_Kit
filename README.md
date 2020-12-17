@@ -1,4 +1,4 @@
-# Unified_Calculator_Kit
+# Unified Calculator Kit
 A calculator for people who hate calculators
 
 ## The System
